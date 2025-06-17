@@ -3,6 +3,7 @@
 #include <fstream>
 #include <sstream>
 #include <iostream>
+#include <myMath.h>
 
 static std::string readFile(const char* filePath) {
     
@@ -55,7 +56,16 @@ GLuint LoadShader(const char* vertexPath, const char* fragmentPath) {
     return shaderProgram;
 }
 
-GLuint DrawLine(float* pointA, float* pointB) //does what it says on the tin
+GLuint DrawLine(float* pointA, float* pointB, float thickness) //draws a quad between 2 points
 {
-    return;
+    Vector2 vec = Vector2(pointB[0] - pointA[0], pointB[1] - pointB[1]);
+    Vector2 ortho = Vector2(vec.y, -vec.x);
+
+    float points[] = { // 4 points of our quad line
+        pointA[0] + (ortho * (thickness/2)).x, pointA[1] + (ortho * (thickness/2)).y,
+        pointA[0] - (ortho * (thickness/2)).x, pointA[1] + (ortho * (thickness/2)).y,
+        pointB[0] + (ortho * (thickness/2)).x, pointB[1] + (ortho * (thickness/2)).y,
+        pointB[0] - (ortho * (thickness/2)).x, pointB[1] + (ortho * (thickness/2)).y,
+    };
+    
 }
