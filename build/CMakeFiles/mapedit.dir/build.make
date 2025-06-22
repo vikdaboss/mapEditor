@@ -52,10 +52,10 @@ RM = "C:\Program Files\CMake\bin\cmake.exe" -E rm -f
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = C:\Users\vicro\Desktop\Mech\mapedit
+CMAKE_SOURCE_DIR = C:\Users\vicro\Desktop\Mech\mapedit\repo\mapEditor
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = C:\Users\vicro\Desktop\Mech\mapedit\build
+CMAKE_BINARY_DIR = C:\Users\vicro\Desktop\Mech\mapedit\repo\mapEditor\build
 
 # Include any dependencies generated for this target.
 include CMakeFiles/mapedit.dir/depend.make
@@ -73,78 +73,93 @@ CMakeFiles/mapedit.dir/codegen:
 
 CMakeFiles/mapedit.dir/main/main.cpp.obj: CMakeFiles/mapedit.dir/flags.make
 CMakeFiles/mapedit.dir/main/main.cpp.obj: CMakeFiles/mapedit.dir/includes_CXX.rsp
-CMakeFiles/mapedit.dir/main/main.cpp.obj: C:/Users/vicro/Desktop/Mech/mapedit/main/main.cpp
+CMakeFiles/mapedit.dir/main/main.cpp.obj: C:/Users/vicro/Desktop/Mech/mapedit/repo/mapEditor/main/main.cpp
 CMakeFiles/mapedit.dir/main/main.cpp.obj: CMakeFiles/mapedit.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=C:\Users\vicro\Desktop\Mech\mapedit\build\CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building CXX object CMakeFiles/mapedit.dir/main/main.cpp.obj"
-	C:\PROGRA~2\MINGW-~1\I686-8~1.0-P\mingw32\bin\C__~1.EXE $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/mapedit.dir/main/main.cpp.obj -MF CMakeFiles\mapedit.dir\main\main.cpp.obj.d -o CMakeFiles\mapedit.dir\main\main.cpp.obj -c C:\Users\vicro\Desktop\Mech\mapedit\main\main.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=C:\Users\vicro\Desktop\Mech\mapedit\repo\mapEditor\build\CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building CXX object CMakeFiles/mapedit.dir/main/main.cpp.obj"
+	C:\PROGRA~2\MINGW-~1\I686-8~1.0-P\mingw32\bin\C__~1.EXE $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/mapedit.dir/main/main.cpp.obj -MF CMakeFiles\mapedit.dir\main\main.cpp.obj.d -o CMakeFiles\mapedit.dir\main\main.cpp.obj -c C:\Users\vicro\Desktop\Mech\mapedit\repo\mapEditor\main\main.cpp
 
 CMakeFiles/mapedit.dir/main/main.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/mapedit.dir/main/main.cpp.i"
-	C:\PROGRA~2\MINGW-~1\I686-8~1.0-P\mingw32\bin\C__~1.EXE $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E C:\Users\vicro\Desktop\Mech\mapedit\main\main.cpp > CMakeFiles\mapedit.dir\main\main.cpp.i
+	C:\PROGRA~2\MINGW-~1\I686-8~1.0-P\mingw32\bin\C__~1.EXE $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E C:\Users\vicro\Desktop\Mech\mapedit\repo\mapEditor\main\main.cpp > CMakeFiles\mapedit.dir\main\main.cpp.i
 
 CMakeFiles/mapedit.dir/main/main.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/mapedit.dir/main/main.cpp.s"
-	C:\PROGRA~2\MINGW-~1\I686-8~1.0-P\mingw32\bin\C__~1.EXE $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S C:\Users\vicro\Desktop\Mech\mapedit\main\main.cpp -o CMakeFiles\mapedit.dir\main\main.cpp.s
+	C:\PROGRA~2\MINGW-~1\I686-8~1.0-P\mingw32\bin\C__~1.EXE $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S C:\Users\vicro\Desktop\Mech\mapedit\repo\mapEditor\main\main.cpp -o CMakeFiles\mapedit.dir\main\main.cpp.s
 
 CMakeFiles/mapedit.dir/main/windowManager.cpp.obj: CMakeFiles/mapedit.dir/flags.make
 CMakeFiles/mapedit.dir/main/windowManager.cpp.obj: CMakeFiles/mapedit.dir/includes_CXX.rsp
-CMakeFiles/mapedit.dir/main/windowManager.cpp.obj: C:/Users/vicro/Desktop/Mech/mapedit/main/windowManager.cpp
+CMakeFiles/mapedit.dir/main/windowManager.cpp.obj: C:/Users/vicro/Desktop/Mech/mapedit/repo/mapEditor/main/windowManager.cpp
 CMakeFiles/mapedit.dir/main/windowManager.cpp.obj: CMakeFiles/mapedit.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=C:\Users\vicro\Desktop\Mech\mapedit\build\CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Building CXX object CMakeFiles/mapedit.dir/main/windowManager.cpp.obj"
-	C:\PROGRA~2\MINGW-~1\I686-8~1.0-P\mingw32\bin\C__~1.EXE $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/mapedit.dir/main/windowManager.cpp.obj -MF CMakeFiles\mapedit.dir\main\windowManager.cpp.obj.d -o CMakeFiles\mapedit.dir\main\windowManager.cpp.obj -c C:\Users\vicro\Desktop\Mech\mapedit\main\windowManager.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=C:\Users\vicro\Desktop\Mech\mapedit\repo\mapEditor\build\CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Building CXX object CMakeFiles/mapedit.dir/main/windowManager.cpp.obj"
+	C:\PROGRA~2\MINGW-~1\I686-8~1.0-P\mingw32\bin\C__~1.EXE $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/mapedit.dir/main/windowManager.cpp.obj -MF CMakeFiles\mapedit.dir\main\windowManager.cpp.obj.d -o CMakeFiles\mapedit.dir\main\windowManager.cpp.obj -c C:\Users\vicro\Desktop\Mech\mapedit\repo\mapEditor\main\windowManager.cpp
 
 CMakeFiles/mapedit.dir/main/windowManager.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/mapedit.dir/main/windowManager.cpp.i"
-	C:\PROGRA~2\MINGW-~1\I686-8~1.0-P\mingw32\bin\C__~1.EXE $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E C:\Users\vicro\Desktop\Mech\mapedit\main\windowManager.cpp > CMakeFiles\mapedit.dir\main\windowManager.cpp.i
+	C:\PROGRA~2\MINGW-~1\I686-8~1.0-P\mingw32\bin\C__~1.EXE $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E C:\Users\vicro\Desktop\Mech\mapedit\repo\mapEditor\main\windowManager.cpp > CMakeFiles\mapedit.dir\main\windowManager.cpp.i
 
 CMakeFiles/mapedit.dir/main/windowManager.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/mapedit.dir/main/windowManager.cpp.s"
-	C:\PROGRA~2\MINGW-~1\I686-8~1.0-P\mingw32\bin\C__~1.EXE $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S C:\Users\vicro\Desktop\Mech\mapedit\main\windowManager.cpp -o CMakeFiles\mapedit.dir\main\windowManager.cpp.s
+	C:\PROGRA~2\MINGW-~1\I686-8~1.0-P\mingw32\bin\C__~1.EXE $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S C:\Users\vicro\Desktop\Mech\mapedit\repo\mapEditor\main\windowManager.cpp -o CMakeFiles\mapedit.dir\main\windowManager.cpp.s
 
 CMakeFiles/mapedit.dir/main/callbacks.cpp.obj: CMakeFiles/mapedit.dir/flags.make
 CMakeFiles/mapedit.dir/main/callbacks.cpp.obj: CMakeFiles/mapedit.dir/includes_CXX.rsp
-CMakeFiles/mapedit.dir/main/callbacks.cpp.obj: C:/Users/vicro/Desktop/Mech/mapedit/main/callbacks.cpp
+CMakeFiles/mapedit.dir/main/callbacks.cpp.obj: C:/Users/vicro/Desktop/Mech/mapedit/repo/mapEditor/main/callbacks.cpp
 CMakeFiles/mapedit.dir/main/callbacks.cpp.obj: CMakeFiles/mapedit.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=C:\Users\vicro\Desktop\Mech\mapedit\build\CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Building CXX object CMakeFiles/mapedit.dir/main/callbacks.cpp.obj"
-	C:\PROGRA~2\MINGW-~1\I686-8~1.0-P\mingw32\bin\C__~1.EXE $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/mapedit.dir/main/callbacks.cpp.obj -MF CMakeFiles\mapedit.dir\main\callbacks.cpp.obj.d -o CMakeFiles\mapedit.dir\main\callbacks.cpp.obj -c C:\Users\vicro\Desktop\Mech\mapedit\main\callbacks.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=C:\Users\vicro\Desktop\Mech\mapedit\repo\mapEditor\build\CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Building CXX object CMakeFiles/mapedit.dir/main/callbacks.cpp.obj"
+	C:\PROGRA~2\MINGW-~1\I686-8~1.0-P\mingw32\bin\C__~1.EXE $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/mapedit.dir/main/callbacks.cpp.obj -MF CMakeFiles\mapedit.dir\main\callbacks.cpp.obj.d -o CMakeFiles\mapedit.dir\main\callbacks.cpp.obj -c C:\Users\vicro\Desktop\Mech\mapedit\repo\mapEditor\main\callbacks.cpp
 
 CMakeFiles/mapedit.dir/main/callbacks.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/mapedit.dir/main/callbacks.cpp.i"
-	C:\PROGRA~2\MINGW-~1\I686-8~1.0-P\mingw32\bin\C__~1.EXE $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E C:\Users\vicro\Desktop\Mech\mapedit\main\callbacks.cpp > CMakeFiles\mapedit.dir\main\callbacks.cpp.i
+	C:\PROGRA~2\MINGW-~1\I686-8~1.0-P\mingw32\bin\C__~1.EXE $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E C:\Users\vicro\Desktop\Mech\mapedit\repo\mapEditor\main\callbacks.cpp > CMakeFiles\mapedit.dir\main\callbacks.cpp.i
 
 CMakeFiles/mapedit.dir/main/callbacks.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/mapedit.dir/main/callbacks.cpp.s"
-	C:\PROGRA~2\MINGW-~1\I686-8~1.0-P\mingw32\bin\C__~1.EXE $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S C:\Users\vicro\Desktop\Mech\mapedit\main\callbacks.cpp -o CMakeFiles\mapedit.dir\main\callbacks.cpp.s
+	C:\PROGRA~2\MINGW-~1\I686-8~1.0-P\mingw32\bin\C__~1.EXE $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S C:\Users\vicro\Desktop\Mech\mapedit\repo\mapEditor\main\callbacks.cpp -o CMakeFiles\mapedit.dir\main\callbacks.cpp.s
 
 CMakeFiles/mapedit.dir/main/OpenGLUtils.cpp.obj: CMakeFiles/mapedit.dir/flags.make
 CMakeFiles/mapedit.dir/main/OpenGLUtils.cpp.obj: CMakeFiles/mapedit.dir/includes_CXX.rsp
-CMakeFiles/mapedit.dir/main/OpenGLUtils.cpp.obj: C:/Users/vicro/Desktop/Mech/mapedit/main/OpenGLUtils.cpp
+CMakeFiles/mapedit.dir/main/OpenGLUtils.cpp.obj: C:/Users/vicro/Desktop/Mech/mapedit/repo/mapEditor/main/OpenGLUtils.cpp
 CMakeFiles/mapedit.dir/main/OpenGLUtils.cpp.obj: CMakeFiles/mapedit.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=C:\Users\vicro\Desktop\Mech\mapedit\build\CMakeFiles --progress-num=$(CMAKE_PROGRESS_4) "Building CXX object CMakeFiles/mapedit.dir/main/OpenGLUtils.cpp.obj"
-	C:\PROGRA~2\MINGW-~1\I686-8~1.0-P\mingw32\bin\C__~1.EXE $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/mapedit.dir/main/OpenGLUtils.cpp.obj -MF CMakeFiles\mapedit.dir\main\OpenGLUtils.cpp.obj.d -o CMakeFiles\mapedit.dir\main\OpenGLUtils.cpp.obj -c C:\Users\vicro\Desktop\Mech\mapedit\main\OpenGLUtils.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=C:\Users\vicro\Desktop\Mech\mapedit\repo\mapEditor\build\CMakeFiles --progress-num=$(CMAKE_PROGRESS_4) "Building CXX object CMakeFiles/mapedit.dir/main/OpenGLUtils.cpp.obj"
+	C:\PROGRA~2\MINGW-~1\I686-8~1.0-P\mingw32\bin\C__~1.EXE $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/mapedit.dir/main/OpenGLUtils.cpp.obj -MF CMakeFiles\mapedit.dir\main\OpenGLUtils.cpp.obj.d -o CMakeFiles\mapedit.dir\main\OpenGLUtils.cpp.obj -c C:\Users\vicro\Desktop\Mech\mapedit\repo\mapEditor\main\OpenGLUtils.cpp
 
 CMakeFiles/mapedit.dir/main/OpenGLUtils.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/mapedit.dir/main/OpenGLUtils.cpp.i"
-	C:\PROGRA~2\MINGW-~1\I686-8~1.0-P\mingw32\bin\C__~1.EXE $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E C:\Users\vicro\Desktop\Mech\mapedit\main\OpenGLUtils.cpp > CMakeFiles\mapedit.dir\main\OpenGLUtils.cpp.i
+	C:\PROGRA~2\MINGW-~1\I686-8~1.0-P\mingw32\bin\C__~1.EXE $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E C:\Users\vicro\Desktop\Mech\mapedit\repo\mapEditor\main\OpenGLUtils.cpp > CMakeFiles\mapedit.dir\main\OpenGLUtils.cpp.i
 
 CMakeFiles/mapedit.dir/main/OpenGLUtils.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/mapedit.dir/main/OpenGLUtils.cpp.s"
-	C:\PROGRA~2\MINGW-~1\I686-8~1.0-P\mingw32\bin\C__~1.EXE $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S C:\Users\vicro\Desktop\Mech\mapedit\main\OpenGLUtils.cpp -o CMakeFiles\mapedit.dir\main\OpenGLUtils.cpp.s
+	C:\PROGRA~2\MINGW-~1\I686-8~1.0-P\mingw32\bin\C__~1.EXE $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S C:\Users\vicro\Desktop\Mech\mapedit\repo\mapEditor\main\OpenGLUtils.cpp -o CMakeFiles\mapedit.dir\main\OpenGLUtils.cpp.s
 
 CMakeFiles/mapedit.dir/main/mapEditor.cpp.obj: CMakeFiles/mapedit.dir/flags.make
 CMakeFiles/mapedit.dir/main/mapEditor.cpp.obj: CMakeFiles/mapedit.dir/includes_CXX.rsp
-CMakeFiles/mapedit.dir/main/mapEditor.cpp.obj: C:/Users/vicro/Desktop/Mech/mapedit/main/mapEditor.cpp
+CMakeFiles/mapedit.dir/main/mapEditor.cpp.obj: C:/Users/vicro/Desktop/Mech/mapedit/repo/mapEditor/main/mapEditor.cpp
 CMakeFiles/mapedit.dir/main/mapEditor.cpp.obj: CMakeFiles/mapedit.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=C:\Users\vicro\Desktop\Mech\mapedit\build\CMakeFiles --progress-num=$(CMAKE_PROGRESS_5) "Building CXX object CMakeFiles/mapedit.dir/main/mapEditor.cpp.obj"
-	C:\PROGRA~2\MINGW-~1\I686-8~1.0-P\mingw32\bin\C__~1.EXE $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/mapedit.dir/main/mapEditor.cpp.obj -MF CMakeFiles\mapedit.dir\main\mapEditor.cpp.obj.d -o CMakeFiles\mapedit.dir\main\mapEditor.cpp.obj -c C:\Users\vicro\Desktop\Mech\mapedit\main\mapEditor.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=C:\Users\vicro\Desktop\Mech\mapedit\repo\mapEditor\build\CMakeFiles --progress-num=$(CMAKE_PROGRESS_5) "Building CXX object CMakeFiles/mapedit.dir/main/mapEditor.cpp.obj"
+	C:\PROGRA~2\MINGW-~1\I686-8~1.0-P\mingw32\bin\C__~1.EXE $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/mapedit.dir/main/mapEditor.cpp.obj -MF CMakeFiles\mapedit.dir\main\mapEditor.cpp.obj.d -o CMakeFiles\mapedit.dir\main\mapEditor.cpp.obj -c C:\Users\vicro\Desktop\Mech\mapedit\repo\mapEditor\main\mapEditor.cpp
 
 CMakeFiles/mapedit.dir/main/mapEditor.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/mapedit.dir/main/mapEditor.cpp.i"
-	C:\PROGRA~2\MINGW-~1\I686-8~1.0-P\mingw32\bin\C__~1.EXE $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E C:\Users\vicro\Desktop\Mech\mapedit\main\mapEditor.cpp > CMakeFiles\mapedit.dir\main\mapEditor.cpp.i
+	C:\PROGRA~2\MINGW-~1\I686-8~1.0-P\mingw32\bin\C__~1.EXE $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E C:\Users\vicro\Desktop\Mech\mapedit\repo\mapEditor\main\mapEditor.cpp > CMakeFiles\mapedit.dir\main\mapEditor.cpp.i
 
 CMakeFiles/mapedit.dir/main/mapEditor.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/mapedit.dir/main/mapEditor.cpp.s"
-	C:\PROGRA~2\MINGW-~1\I686-8~1.0-P\mingw32\bin\C__~1.EXE $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S C:\Users\vicro\Desktop\Mech\mapedit\main\mapEditor.cpp -o CMakeFiles\mapedit.dir\main\mapEditor.cpp.s
+	C:\PROGRA~2\MINGW-~1\I686-8~1.0-P\mingw32\bin\C__~1.EXE $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S C:\Users\vicro\Desktop\Mech\mapedit\repo\mapEditor\main\mapEditor.cpp -o CMakeFiles\mapedit.dir\main\mapEditor.cpp.s
+
+CMakeFiles/mapedit.dir/main/myMath.cpp.obj: CMakeFiles/mapedit.dir/flags.make
+CMakeFiles/mapedit.dir/main/myMath.cpp.obj: CMakeFiles/mapedit.dir/includes_CXX.rsp
+CMakeFiles/mapedit.dir/main/myMath.cpp.obj: C:/Users/vicro/Desktop/Mech/mapedit/repo/mapEditor/main/myMath.cpp
+CMakeFiles/mapedit.dir/main/myMath.cpp.obj: CMakeFiles/mapedit.dir/compiler_depend.ts
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=C:\Users\vicro\Desktop\Mech\mapedit\repo\mapEditor\build\CMakeFiles --progress-num=$(CMAKE_PROGRESS_6) "Building CXX object CMakeFiles/mapedit.dir/main/myMath.cpp.obj"
+	C:\PROGRA~2\MINGW-~1\I686-8~1.0-P\mingw32\bin\C__~1.EXE $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/mapedit.dir/main/myMath.cpp.obj -MF CMakeFiles\mapedit.dir\main\myMath.cpp.obj.d -o CMakeFiles\mapedit.dir\main\myMath.cpp.obj -c C:\Users\vicro\Desktop\Mech\mapedit\repo\mapEditor\main\myMath.cpp
+
+CMakeFiles/mapedit.dir/main/myMath.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/mapedit.dir/main/myMath.cpp.i"
+	C:\PROGRA~2\MINGW-~1\I686-8~1.0-P\mingw32\bin\C__~1.EXE $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E C:\Users\vicro\Desktop\Mech\mapedit\repo\mapEditor\main\myMath.cpp > CMakeFiles\mapedit.dir\main\myMath.cpp.i
+
+CMakeFiles/mapedit.dir/main/myMath.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/mapedit.dir/main/myMath.cpp.s"
+	C:\PROGRA~2\MINGW-~1\I686-8~1.0-P\mingw32\bin\C__~1.EXE $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S C:\Users\vicro\Desktop\Mech\mapedit\repo\mapEditor\main\myMath.cpp -o CMakeFiles\mapedit.dir\main\myMath.cpp.s
 
 # Object files for target mapedit
 mapedit_OBJECTS = \
@@ -152,7 +167,8 @@ mapedit_OBJECTS = \
 "CMakeFiles/mapedit.dir/main/windowManager.cpp.obj" \
 "CMakeFiles/mapedit.dir/main/callbacks.cpp.obj" \
 "CMakeFiles/mapedit.dir/main/OpenGLUtils.cpp.obj" \
-"CMakeFiles/mapedit.dir/main/mapEditor.cpp.obj"
+"CMakeFiles/mapedit.dir/main/mapEditor.cpp.obj" \
+"CMakeFiles/mapedit.dir/main/myMath.cpp.obj"
 
 # External object files for target mapedit
 mapedit_EXTERNAL_OBJECTS =
@@ -162,13 +178,14 @@ mapedit.exe: CMakeFiles/mapedit.dir/main/windowManager.cpp.obj
 mapedit.exe: CMakeFiles/mapedit.dir/main/callbacks.cpp.obj
 mapedit.exe: CMakeFiles/mapedit.dir/main/OpenGLUtils.cpp.obj
 mapedit.exe: CMakeFiles/mapedit.dir/main/mapEditor.cpp.obj
+mapedit.exe: CMakeFiles/mapedit.dir/main/myMath.cpp.obj
 mapedit.exe: CMakeFiles/mapedit.dir/build.make
 mapedit.exe: libglad.a
-mapedit.exe: C:/Users/vicro/Desktop/Mech/mapedit/libraries/lib/libglfw3.a
+mapedit.exe: C:/Users/vicro/Desktop/Mech/mapedit/repo/mapEditor/libraries/lib/libglfw3.a
 mapedit.exe: CMakeFiles/mapedit.dir/linkLibs.rsp
 mapedit.exe: CMakeFiles/mapedit.dir/objects1.rsp
 mapedit.exe: CMakeFiles/mapedit.dir/link.txt
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --bold --progress-dir=C:\Users\vicro\Desktop\Mech\mapedit\build\CMakeFiles --progress-num=$(CMAKE_PROGRESS_6) "Linking CXX executable mapedit.exe"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --bold --progress-dir=C:\Users\vicro\Desktop\Mech\mapedit\repo\mapEditor\build\CMakeFiles --progress-num=$(CMAKE_PROGRESS_7) "Linking CXX executable mapedit.exe"
 	$(CMAKE_COMMAND) -E cmake_link_script CMakeFiles\mapedit.dir\link.txt --verbose=$(VERBOSE)
 
 # Rule to build all files generated by this target.
@@ -180,6 +197,6 @@ CMakeFiles/mapedit.dir/clean:
 .PHONY : CMakeFiles/mapedit.dir/clean
 
 CMakeFiles/mapedit.dir/depend:
-	$(CMAKE_COMMAND) -E cmake_depends "MinGW Makefiles" C:\Users\vicro\Desktop\Mech\mapedit C:\Users\vicro\Desktop\Mech\mapedit C:\Users\vicro\Desktop\Mech\mapedit\build C:\Users\vicro\Desktop\Mech\mapedit\build C:\Users\vicro\Desktop\Mech\mapedit\build\CMakeFiles\mapedit.dir\DependInfo.cmake "--color=$(COLOR)"
+	$(CMAKE_COMMAND) -E cmake_depends "MinGW Makefiles" C:\Users\vicro\Desktop\Mech\mapedit\repo\mapEditor C:\Users\vicro\Desktop\Mech\mapedit\repo\mapEditor C:\Users\vicro\Desktop\Mech\mapedit\repo\mapEditor\build C:\Users\vicro\Desktop\Mech\mapedit\repo\mapEditor\build C:\Users\vicro\Desktop\Mech\mapedit\repo\mapEditor\build\CMakeFiles\mapedit.dir\DependInfo.cmake "--color=$(COLOR)"
 .PHONY : CMakeFiles/mapedit.dir/depend
 

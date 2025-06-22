@@ -56,10 +56,10 @@ RM = "C:\Program Files\CMake\bin\cmake.exe" -E rm -f
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = C:\Users\vicro\Desktop\Mech\mapedit
+CMAKE_SOURCE_DIR = C:\Users\vicro\Desktop\Mech\mapedit\repo\mapEditor
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = C:\Users\vicro\Desktop\Mech\mapedit\build
+CMAKE_BINARY_DIR = C:\Users\vicro\Desktop\Mech\mapedit\repo\mapEditor\build
 
 #=============================================================================
 # Targets provided globally by CMake.
@@ -86,9 +86,9 @@ rebuild_cache/fast: rebuild_cache
 
 # The main all target
 all: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start C:\Users\vicro\Desktop\Mech\mapedit\build\CMakeFiles C:\Users\vicro\Desktop\Mech\mapedit\build\\CMakeFiles\progress.marks
+	$(CMAKE_COMMAND) -E cmake_progress_start C:\Users\vicro\Desktop\Mech\mapedit\repo\mapEditor\build\CMakeFiles C:\Users\vicro\Desktop\Mech\mapedit\repo\mapEditor\build\\CMakeFiles\progress.marks
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\Makefile2 all
-	$(CMAKE_COMMAND) -E cmake_progress_start C:\Users\vicro\Desktop\Mech\mapedit\build\CMakeFiles 0
+	$(CMAKE_COMMAND) -E cmake_progress_start C:\Users\vicro\Desktop\Mech\mapedit\repo\mapEditor\build\CMakeFiles 0
 .PHONY : all
 
 # The main clean target
@@ -261,6 +261,30 @@ main/mapEditor.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\mapedit.dir\build.make CMakeFiles/mapedit.dir/main/mapEditor.cpp.s
 .PHONY : main/mapEditor.cpp.s
 
+main/myMath.obj: main/myMath.cpp.obj
+.PHONY : main/myMath.obj
+
+# target to build an object file
+main/myMath.cpp.obj:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\mapedit.dir\build.make CMakeFiles/mapedit.dir/main/myMath.cpp.obj
+.PHONY : main/myMath.cpp.obj
+
+main/myMath.i: main/myMath.cpp.i
+.PHONY : main/myMath.i
+
+# target to preprocess a source file
+main/myMath.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\mapedit.dir\build.make CMakeFiles/mapedit.dir/main/myMath.cpp.i
+.PHONY : main/myMath.cpp.i
+
+main/myMath.s: main/myMath.cpp.s
+.PHONY : main/myMath.s
+
+# target to generate assembly for a file
+main/myMath.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\mapedit.dir\build.make CMakeFiles/mapedit.dir/main/myMath.cpp.s
+.PHONY : main/myMath.cpp.s
+
 main/windowManager.obj: main/windowManager.cpp.obj
 .PHONY : main/windowManager.obj
 
@@ -310,6 +334,9 @@ help:
 	@echo ... main/mapEditor.obj
 	@echo ... main/mapEditor.i
 	@echo ... main/mapEditor.s
+	@echo ... main/myMath.obj
+	@echo ... main/myMath.i
+	@echo ... main/myMath.s
 	@echo ... main/windowManager.obj
 	@echo ... main/windowManager.i
 	@echo ... main/windowManager.s

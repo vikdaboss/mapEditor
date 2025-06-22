@@ -1,5 +1,5 @@
 CMakeFiles/glad.dir/main/glad.c.obj: \
- C:\Users\vicro\Desktop\Mech\mapedit\main\glad.c \
+ C:\Users\vicro\Desktop\Mech\mapedit\repo\mapEditor\main\glad.c \
  C:/PROGRA~2/MINGW-~1/I686-8~1.0-P/mingw32/i686-w64-mingw32/include/stdio.h \
  C:/PROGRA~2/MINGW-~1/I686-8~1.0-P/mingw32/i686-w64-mingw32/include/crtdefs.h \
  C:/PROGRA~2/MINGW-~1/I686-8~1.0-P/mingw32/i686-w64-mingw32/include/_mingw.h \
@@ -21,8 +21,8 @@ CMakeFiles/glad.dir/main/glad.c.obj: \
  C:/PROGRA~2/MINGW-~1/I686-8~1.0-P/mingw32/i686-w64-mingw32/include/malloc.h \
  C:/PROGRA~2/MINGW-~1/I686-8~1.0-P/mingw32/i686-w64-mingw32/include/string.h \
  C:/PROGRA~2/MINGW-~1/I686-8~1.0-P/mingw32/i686-w64-mingw32/include/sec_api/string_s.h \
- C:/Users/vicro/Desktop/Mech/mapedit/libraries/include/glad/glad.h \
- C:/Users/vicro/Desktop/Mech/mapedit/libraries/include/KHR/khrplatform.h \
+ C:/Users/vicro/Desktop/Mech/mapedit/repo/mapEditor/libraries/include/glad/glad.h \
+ C:/Users/vicro/Desktop/Mech/mapedit/repo/mapEditor/libraries/include/KHR/khrplatform.h \
  C:/PROGRA~2/MINGW-~1/I686-8~1.0-P/mingw32/lib/gcc/i686-w64-mingw32/8.1.0/include/stdint.h \
  C:/PROGRA~2/MINGW-~1/I686-8~1.0-P/mingw32/i686-w64-mingw32/include/stdint.h \
  C:/PROGRA~2/MINGW-~1/I686-8~1.0-P/mingw32/lib/gcc/i686-w64-mingw32/8.1.0/include/stddef.h \

@@ -2,4 +2,4 @@
 #include <glad/glad.h>
 
 GLuint LoadShader(const char* vertexPath, const char* fragmentPath);
-GLuint DrawLine(float* pointA, float* pointB);
+void DrawLine(float* pointA, float* pointB, float thickness,int lineType, float* outPoints);

@@ -55,17 +55,35 @@ GLuint LoadShader(const char* vertexPath, const char* fragmentPath) {
     }
     return shaderProgram;
 }
+//TODO : add to total vertex array function that can be called to add / draw new lines in callbacks,
+// and that returns a pointer to the line in the combined array for deletion
 
-GLuint DrawLine(float* pointA, float* pointB, float thickness) //draws a quad between 2 points
+void DrawLine(float* pointA, float* pointB, float thickness,int lineType, float* outPoints) //draws a quad between 2 points
 {
-    Vector2 vec = Vector2(pointB[0] - pointA[0], pointB[1] - pointB[1]);
+    Vector2 vec = Vector2(pointB[0] - pointA[0], pointB[1] - pointA[1]);
     Vector2 ortho = Vector2(vec.y, -vec.x);
 
-    float points[] = { // 4 points of our quad line
-        pointA[0] + (ortho * (thickness/2)).x, pointA[1] + (ortho * (thickness/2)).y,
-        pointA[0] - (ortho * (thickness/2)).x, pointA[1] + (ortho * (thickness/2)).y,
-        pointB[0] + (ortho * (thickness/2)).x, pointB[1] + (ortho * (thickness/2)).y,
-        pointB[0] - (ortho * (thickness/2)).x, pointB[1] + (ortho * (thickness/2)).y,
-    };
+    if(sizeof(outPoints) != 18*sizeof(float)){
+        std::cout << "outpoints was declared with wrong size for drawline" << std::endl;
+    }
+     // 6 vertices of our quad line
+    outPoints[0] = pointA[0] + (ortho * (thickness/2)).x;
+    outPoints[1] = pointA[1] + (ortho * (thickness/2)).y;
+    outPoints[2] = (float)lineType;
+    outPoints[3] = pointA[0] - (ortho * (thickness/2)).x;
+    outPoints[4] = pointA[1] + (ortho * (thickness/2)).y;
+    outPoints[5] = (float)lineType;
+    outPoints[6] = pointB[0] + (ortho * (thickness/2)).x;
+    outPoints[7] = pointB[1] + (ortho * (thickness/2)).y;
+    outPoints[8] = (float)lineType;
     
+    outPoints[9] = pointB[0] + (ortho * (thickness/2)).x;
+    outPoints[10] = pointB[1] + (ortho * (thickness/2)).y;
+    outPoints[11] = (float)lineType;
+    outPoints[12] = pointB[0] - (ortho * (thickness/2)).x;
+    outPoints[13] = pointB[1] + (ortho * (thickness/2)).y;
+    outPoints[14] = (float)lineType;
+    outPoints[15] = pointA[0] - (ortho * (thickness/2)).x;
+    outPoints[16] = pointA[1] + (ortho * (thickness/2)).y;
+    outPoints[17] = (float)lineType;
 }

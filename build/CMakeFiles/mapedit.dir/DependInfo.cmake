@@ -8,11 +8,12 @@ set(CMAKE_DEPENDS_LANGUAGES
 
 # The set of dependency files which are needed:
 set(CMAKE_DEPENDS_DEPENDENCY_FILES
-  "C:/Users/vicro/Desktop/Mech/mapedit/main/OpenGLUtils.cpp" "CMakeFiles/mapedit.dir/main/OpenGLUtils.cpp.obj" "gcc" "CMakeFiles/mapedit.dir/main/OpenGLUtils.cpp.obj.d"
-  "C:/Users/vicro/Desktop/Mech/mapedit/main/callbacks.cpp" "CMakeFiles/mapedit.dir/main/callbacks.cpp.obj" "gcc" "CMakeFiles/mapedit.dir/main/callbacks.cpp.obj.d"
-  "C:/Users/vicro/Desktop/Mech/mapedit/main/main.cpp" "CMakeFiles/mapedit.dir/main/main.cpp.obj" "gcc" "CMakeFiles/mapedit.dir/main/main.cpp.obj.d"
-  "C:/Users/vicro/Desktop/Mech/mapedit/main/mapEditor.cpp" "CMakeFiles/mapedit.dir/main/mapEditor.cpp.obj" "gcc" "CMakeFiles/mapedit.dir/main/mapEditor.cpp.obj.d"
-  "C:/Users/vicro/Desktop/Mech/mapedit/main/windowManager.cpp" "CMakeFiles/mapedit.dir/main/windowManager.cpp.obj" "gcc" "CMakeFiles/mapedit.dir/main/windowManager.cpp.obj.d"
+  "C:/Users/vicro/Desktop/Mech/mapedit/repo/mapEditor/main/OpenGLUtils.cpp" "CMakeFiles/mapedit.dir/main/OpenGLUtils.cpp.obj" "gcc" "CMakeFiles/mapedit.dir/main/OpenGLUtils.cpp.obj.d"
+  "C:/Users/vicro/Desktop/Mech/mapedit/repo/mapEditor/main/callbacks.cpp" "CMakeFiles/mapedit.dir/main/callbacks.cpp.obj" "gcc" "CMakeFiles/mapedit.dir/main/callbacks.cpp.obj.d"
+  "C:/Users/vicro/Desktop/Mech/mapedit/repo/mapEditor/main/main.cpp" "CMakeFiles/mapedit.dir/main/main.cpp.obj" "gcc" "CMakeFiles/mapedit.dir/main/main.cpp.obj.d"
+  "C:/Users/vicro/Desktop/Mech/mapedit/repo/mapEditor/main/mapEditor.cpp" "CMakeFiles/mapedit.dir/main/mapEditor.cpp.obj" "gcc" "CMakeFiles/mapedit.dir/main/mapEditor.cpp.obj.d"
+  "C:/Users/vicro/Desktop/Mech/mapedit/repo/mapEditor/main/myMath.cpp" "CMakeFiles/mapedit.dir/main/myMath.cpp.obj" "gcc" "CMakeFiles/mapedit.dir/main/myMath.cpp.obj.d"
+  "C:/Users/vicro/Desktop/Mech/mapedit/repo/mapEditor/main/windowManager.cpp" "CMakeFiles/mapedit.dir/main/windowManager.cpp.obj" "gcc" "CMakeFiles/mapedit.dir/main/windowManager.cpp.obj.d"
   )
 
 # Targets to which this target links which contain Fortran sources.

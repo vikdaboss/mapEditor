@@ -24,15 +24,30 @@ int main()
     //glfwSwapInterval(0); // Disables V-Sync
     WindowManager::setupCallbacks(window);
 
-    float points[] = {
-        -1.0f,  1.0f,  // Top-left
-         1.0f,  1.0f,  // Top-right
-        -1.0f, -1.0f,  // Bottom-left
+    float   grid_points[] = {
+        -1.0f,  1.0f, 0.0f,  // Top-left
+         1.0f,  1.0f, 0.0f,  // Top-right
+        -1.0f, -1.0f, 0.0f,  // Bottom-left
 
-        -1.0f, -1.0f,  // Bottom-left
-         1.0f,  1.0f,  // Top-right
-         1.0f, -1.0f   // Bottom-right
+        -1.0f, -1.0f, 0.0f,  // Bottom-left
+         1.0f,  1.0f, 0.0f,  // Top-right
+         1.0f, -1.0f, 0.0f   // Bottom-right
     };
+    float pointA[] = {0.5,0.5};
+    float pointB[] = {-0.5,-0.5};
+    float pointC[] = {-0.5,0.5};
+    float pointD[] = {0.5,-0.5};
+    
+    float testLine1[18];
+    DrawLine(pointA,pointB,0.05,1,testLine1);
+
+    float testLine2[18];
+    DrawLine(pointC,pointD,0.05,2,testLine2);
+
+    float points[54];
+    memcpy(points,grid_points, sizeof(grid_points));
+    memcpy(points+18, testLine1, sizeof(testLine1));
+    memcpy(points+36, testLine2, sizeof(testLine2));
     float center_offset[] = {0.0,0.0};
 
     //create vertex buffer object
@@ -45,9 +60,12 @@ int main()
     GLuint vao = 0;
     glGenVertexArrays( 1, &vao );
     glBindVertexArray( vao );
-    glEnableVertexAttribArray( 0 );
     glBindBuffer( GL_ARRAY_BUFFER, vbo );
-    glVertexAttribPointer( 0, 2, GL_FLOAT, GL_FALSE, 2*sizeof(float), (void*)0 );
+    glVertexAttribPointer( 0, 2, GL_FLOAT, GL_FALSE, 3*sizeof(float), (void*)0 );
+    glEnableVertexAttribArray( 0 );
+    //vertex type attrib
+    glVertexAttribPointer( 1, 1, GL_FLOAT, GL_FALSE, 3*sizeof(float), (void*)(2*sizeof (float)));
+    glEnableVertexAttribArray( 1 );
 
     //set black clear color and alpha blending
     glClearColor(0.0f, 0.0f, 0.0f, 1.0f);
@@ -55,21 +73,25 @@ int main()
     glBlendFunc(GL_SRC_ALPHA, GL_ONE_MINUS_SRC_ALPHA);
 
     //load shader program
-    GLuint shaderProgram = LoadShader("shaders/vertex.glsl","shaders/fragment.glsl");
+    GLuint shaderProgramGrid = LoadShader("shaders/vertex.glsl","shaders/grid_frag.glsl");
 
     //get uniform location to pass to the shader in program loop
-    glUseProgram(shaderProgram);
-    GLint shader_windowSize = glGetUniformLocation(shaderProgram, "windowSize");
-    GLint shader_centerOffset = glGetUniformLocation(shaderProgram, "centerOffset");
-    GLint shader_zoom = glGetUniformLocation(shaderProgram, "zoomLevel");
+    glUseProgram(shaderProgramGrid);
+    GLint shader_windowSize = glGetUniformLocation(shaderProgramGrid, "windowSize");
+    GLint shader_centerOffset = glGetUniformLocation(shaderProgramGrid, "centerOffset");
+    GLint shader_zoom = glGetUniformLocation(shaderProgramGrid, "zoomLevel");
+
+    GLuint shaderProgramLine = LoadShader("shaders/vertex.glsl","shaders/line_frag.glsl");
 
     //dumb profiling
     std::chrono::_V2::system_clock::time_point frame_start;
     std::chrono::_V2::system_clock::time_point frame_end;
     std::chrono::duration<double> frame_time;
-
+    
     int lastMouseX = 0;
     int lastMouseY = 0;
+
+
     //mainLoop
     while ( !glfwWindowShouldClose( window ) )
     {
@@ -105,7 +127,7 @@ int main()
 
         glClear( GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT );
 
-        glUseProgram( shaderProgram );
+        glUseProgram( shaderProgramGrid );
 
         //setting shader values
         glUniform2f(shader_windowSize,InputState::window_width,InputState::window_height);
@@ -115,6 +137,9 @@ int main()
         //drawing triangles
         glBindVertexArray( vao );
         glDrawArrays( GL_TRIANGLES, 0, 6 );
+
+        glUseProgram(shaderProgramLine);
+        glDrawArrays( GL_TRIANGLES, 6, 12);
     
         //end of frame
         glfwSwapBuffers( window );

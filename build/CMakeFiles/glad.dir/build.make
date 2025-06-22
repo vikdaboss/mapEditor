@@ -52,10 +52,10 @@ RM = "C:\Program Files\CMake\bin\cmake.exe" -E rm -f
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = C:\Users\vicro\Desktop\Mech\mapedit
+CMAKE_SOURCE_DIR = C:\Users\vicro\Desktop\Mech\mapedit\repo\mapEditor
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = C:\Users\vicro\Desktop\Mech\mapedit\build
+CMAKE_BINARY_DIR = C:\Users\vicro\Desktop\Mech\mapedit\repo\mapEditor\build
 
 # Include any dependencies generated for this target.
 include CMakeFiles/glad.dir/depend.make
@@ -73,18 +73,18 @@ CMakeFiles/glad.dir/codegen:
 
 CMakeFiles/glad.dir/main/glad.c.obj: CMakeFiles/glad.dir/flags.make
 CMakeFiles/glad.dir/main/glad.c.obj: CMakeFiles/glad.dir/includes_C.rsp
-CMakeFiles/glad.dir/main/glad.c.obj: C:/Users/vicro/Desktop/Mech/mapedit/main/glad.c
+CMakeFiles/glad.dir/main/glad.c.obj: C:/Users/vicro/Desktop/Mech/mapedit/repo/mapEditor/main/glad.c
 CMakeFiles/glad.dir/main/glad.c.obj: CMakeFiles/glad.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=C:\Users\vicro\Desktop\Mech\mapedit\build\CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building C object CMakeFiles/glad.dir/main/glad.c.obj"
-	C:\PROGRA~2\MINGW-~1\I686-8~1.0-P\mingw32\bin\gcc.exe $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT CMakeFiles/glad.dir/main/glad.c.obj -MF CMakeFiles\glad.dir\main\glad.c.obj.d -o CMakeFiles\glad.dir\main\glad.c.obj -c C:\Users\vicro\Desktop\Mech\mapedit\main\glad.c
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=C:\Users\vicro\Desktop\Mech\mapedit\repo\mapEditor\build\CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building C object CMakeFiles/glad.dir/main/glad.c.obj"
+	C:\PROGRA~2\MINGW-~1\I686-8~1.0-P\mingw32\bin\gcc.exe $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT CMakeFiles/glad.dir/main/glad.c.obj -MF CMakeFiles\glad.dir\main\glad.c.obj.d -o CMakeFiles\glad.dir\main\glad.c.obj -c C:\Users\vicro\Desktop\Mech\mapedit\repo\mapEditor\main\glad.c
 
 CMakeFiles/glad.dir/main/glad.c.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing C source to CMakeFiles/glad.dir/main/glad.c.i"
-	C:\PROGRA~2\MINGW-~1\I686-8~1.0-P\mingw32\bin\gcc.exe $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E C:\Users\vicro\Desktop\Mech\mapedit\main\glad.c > CMakeFiles\glad.dir\main\glad.c.i
+	C:\PROGRA~2\MINGW-~1\I686-8~1.0-P\mingw32\bin\gcc.exe $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E C:\Users\vicro\Desktop\Mech\mapedit\repo\mapEditor\main\glad.c > CMakeFiles\glad.dir\main\glad.c.i
 
 CMakeFiles/glad.dir/main/glad.c.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling C source to assembly CMakeFiles/glad.dir/main/glad.c.s"
-	C:\PROGRA~2\MINGW-~1\I686-8~1.0-P\mingw32\bin\gcc.exe $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S C:\Users\vicro\Desktop\Mech\mapedit\main\glad.c -o CMakeFiles\glad.dir\main\glad.c.s
+	C:\PROGRA~2\MINGW-~1\I686-8~1.0-P\mingw32\bin\gcc.exe $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S C:\Users\vicro\Desktop\Mech\mapedit\repo\mapEditor\main\glad.c -o CMakeFiles\glad.dir\main\glad.c.s
 
 # Object files for target glad
 glad_OBJECTS = \
@@ -96,7 +96,7 @@ glad_EXTERNAL_OBJECTS =
 libglad.a: CMakeFiles/glad.dir/main/glad.c.obj
 libglad.a: CMakeFiles/glad.dir/build.make
 libglad.a: CMakeFiles/glad.dir/link.txt
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --bold --progress-dir=C:\Users\vicro\Desktop\Mech\mapedit\build\CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Linking C static library libglad.a"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --bold --progress-dir=C:\Users\vicro\Desktop\Mech\mapedit\repo\mapEditor\build\CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Linking C static library libglad.a"
 	$(CMAKE_COMMAND) -P CMakeFiles\glad.dir\cmake_clean_target.cmake
 	$(CMAKE_COMMAND) -E cmake_link_script CMakeFiles\glad.dir\link.txt --verbose=$(VERBOSE)
 
@@ -109,6 +109,6 @@ CMakeFiles/glad.dir/clean:
 .PHONY : CMakeFiles/glad.dir/clean
 
 CMakeFiles/glad.dir/depend:
-	$(CMAKE_COMMAND) -E cmake_depends "MinGW Makefiles" C:\Users\vicro\Desktop\Mech\mapedit C:\Users\vicro\Desktop\Mech\mapedit C:\Users\vicro\Desktop\Mech\mapedit\build C:\Users\vicro\Desktop\Mech\mapedit\build C:\Users\vicro\Desktop\Mech\mapedit\build\CMakeFiles\glad.dir\DependInfo.cmake "--color=$(COLOR)"
+	$(CMAKE_COMMAND) -E cmake_depends "MinGW Makefiles" C:\Users\vicro\Desktop\Mech\mapedit\repo\mapEditor C:\Users\vicro\Desktop\Mech\mapedit\repo\mapEditor C:\Users\vicro\Desktop\Mech\mapedit\repo\mapEditor\build C:\Users\vicro\Desktop\Mech\mapedit\repo\mapEditor\build C:\Users\vicro\Desktop\Mech\mapedit\repo\mapEditor\build\CMakeFiles\glad.dir\DependInfo.cmake "--color=$(COLOR)"
 .PHONY : CMakeFiles/glad.dir/depend
 

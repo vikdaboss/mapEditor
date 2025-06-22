@@ -8,7 +8,7 @@ set(CMAKE_DEPENDS_LANGUAGES
 
 # The set of dependency files which are needed:
 set(CMAKE_DEPENDS_DEPENDENCY_FILES
-  "C:/Users/vicro/Desktop/Mech/mapedit/main/glad.c" "CMakeFiles/glad.dir/main/glad.c.obj" "gcc" "CMakeFiles/glad.dir/main/glad.c.obj.d"
+  "C:/Users/vicro/Desktop/Mech/mapedit/repo/mapEditor/main/glad.c" "CMakeFiles/glad.dir/main/glad.c.obj" "gcc" "CMakeFiles/glad.dir/main/glad.c.obj.d"
   )
 
 # Targets to which this target links which contain Fortran sources.

@@ -14,6 +14,7 @@ add_executable(mapedit
  main/callbacks.cpp
  main/OpenGLUtils.cpp
  main/mapEditor.cpp
+ main/myMath.cpp
  )
 
 # Include paths

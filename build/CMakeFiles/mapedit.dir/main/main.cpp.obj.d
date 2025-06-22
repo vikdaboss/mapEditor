@@ -1,5 +1,5 @@
 CMakeFiles/mapedit.dir/main/main.cpp.obj: \
- C:\Users\vicro\Desktop\Mech\mapedit\main\main.cpp \
+ C:\Users\vicro\Desktop\Mech\mapedit\repo\mapEditor\main\main.cpp \
  C:/PROGRA~2/MINGW-~1/I686-8~1.0-P/mingw32/lib/gcc/i686-w64-mingw32/8.1.0/include/c++/iostream \
  C:/PROGRA~2/MINGW-~1/I686-8~1.0-P/mingw32/lib/gcc/i686-w64-mingw32/8.1.0/include/c++/i686-w64-mingw32/bits/c++config.h \
  C:/PROGRA~2/MINGW-~1/I686-8~1.0-P/mingw32/lib/gcc/i686-w64-mingw32/8.1.0/include/c++/i686-w64-mingw32/bits/os_defines.h \
@@ -129,13 +129,13 @@ CMakeFiles/mapedit.dir/main/main.cpp.obj: \
  C:/PROGRA~2/MINGW-~1/I686-8~1.0-P/mingw32/lib/gcc/i686-w64-mingw32/8.1.0/include/c++/bits/ostream.tcc \
  C:/PROGRA~2/MINGW-~1/I686-8~1.0-P/mingw32/lib/gcc/i686-w64-mingw32/8.1.0/include/c++/istream \
  C:/PROGRA~2/MINGW-~1/I686-8~1.0-P/mingw32/lib/gcc/i686-w64-mingw32/8.1.0/include/c++/bits/istream.tcc \
- C:/Users/vicro/Desktop/Mech/mapedit/libraries/include/glad/glad.h \
- C:/Users/vicro/Desktop/Mech/mapedit/libraries/include/KHR/khrplatform.h \
- C:/Users/vicro/Desktop/Mech/mapedit/libraries/include/GLFW/glfw3.h \
- C:/Users/vicro/Desktop/Mech/mapedit/main/windowManager.h \
- C:/Users/vicro/Desktop/Mech/mapedit/main/callbacks.h \
- C:/Users/vicro/Desktop/Mech/mapedit/main/OpenGLUtils.h \
- C:/Users/vicro/Desktop/Mech/mapedit/main/mapEditor.h \
+ C:/Users/vicro/Desktop/Mech/mapedit/repo/mapEditor/libraries/include/glad/glad.h \
+ C:/Users/vicro/Desktop/Mech/mapedit/repo/mapEditor/libraries/include/KHR/khrplatform.h \
+ C:/Users/vicro/Desktop/Mech/mapedit/repo/mapEditor/libraries/include/GLFW/glfw3.h \
+ C:/Users/vicro/Desktop/Mech/mapedit/repo/mapEditor/main/windowManager.h \
+ C:/Users/vicro/Desktop/Mech/mapedit/repo/mapEditor/main/callbacks.h \
+ C:/Users/vicro/Desktop/Mech/mapedit/repo/mapEditor/main/OpenGLUtils.h \
+ C:/Users/vicro/Desktop/Mech/mapedit/repo/mapEditor/main/mapEditor.h \
  C:/PROGRA~2/MINGW-~1/I686-8~1.0-P/mingw32/lib/gcc/i686-w64-mingw32/8.1.0/include/c++/chrono \
  C:/PROGRA~2/MINGW-~1/I686-8~1.0-P/mingw32/lib/gcc/i686-w64-mingw32/8.1.0/include/c++/ratio \
  C:/PROGRA~2/MINGW-~1/I686-8~1.0-P/mingw32/lib/gcc/i686-w64-mingw32/8.1.0/include/c++/ctime \

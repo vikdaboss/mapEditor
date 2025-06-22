@@ -1,7 +1,7 @@
 CMakeFiles/mapedit.dir/main/windowManager.cpp.obj: \
- C:\Users\vicro\Desktop\Mech\mapedit\main\windowManager.cpp \
- C:/Users/vicro/Desktop/Mech/mapedit/libraries/include/glad/glad.h \
- C:/Users/vicro/Desktop/Mech/mapedit/libraries/include/KHR/khrplatform.h \
+ C:\Users\vicro\Desktop\Mech\mapedit\repo\mapEditor\main\windowManager.cpp \
+ C:/Users/vicro/Desktop/Mech/mapedit/repo/mapEditor/libraries/include/glad/glad.h \
+ C:/Users/vicro/Desktop/Mech/mapedit/repo/mapEditor/libraries/include/KHR/khrplatform.h \
  C:/PROGRA~2/MINGW-~1/I686-8~1.0-P/mingw32/lib/gcc/i686-w64-mingw32/8.1.0/include/stdint.h \
  C:/PROGRA~2/MINGW-~1/I686-8~1.0-P/mingw32/i686-w64-mingw32/include/stdint.h \
  C:/PROGRA~2/MINGW-~1/I686-8~1.0-P/mingw32/i686-w64-mingw32/include/crtdefs.h \
@@ -13,9 +13,9 @@ CMakeFiles/mapedit.dir/main/windowManager.cpp.obj: \
  C:/PROGRA~2/MINGW-~1/I686-8~1.0-P/mingw32/i686-w64-mingw32/include/sdks/_mingw_ddk.h \
  C:/PROGRA~2/MINGW-~1/I686-8~1.0-P/mingw32/lib/gcc/i686-w64-mingw32/8.1.0/include/stddef.h \
  C:/PROGRA~2/MINGW-~1/I686-8~1.0-P/mingw32/i686-w64-mingw32/include/stddef.h \
- C:/Users/vicro/Desktop/Mech/mapedit/main/windowManager.h \
- C:/Users/vicro/Desktop/Mech/mapedit/libraries/include/GLFW/glfw3.h \
- C:/Users/vicro/Desktop/Mech/mapedit/main/callbacks.h \
+ C:/Users/vicro/Desktop/Mech/mapedit/repo/mapEditor/main/windowManager.h \
+ C:/Users/vicro/Desktop/Mech/mapedit/repo/mapEditor/libraries/include/GLFW/glfw3.h \
+ C:/Users/vicro/Desktop/Mech/mapedit/repo/mapEditor/main/callbacks.h \
  C:/PROGRA~2/MINGW-~1/I686-8~1.0-P/mingw32/lib/gcc/i686-w64-mingw32/8.1.0/include/c++/iostream \
  C:/PROGRA~2/MINGW-~1/I686-8~1.0-P/mingw32/lib/gcc/i686-w64-mingw32/8.1.0/include/c++/i686-w64-mingw32/bits/c++config.h \
  C:/PROGRA~2/MINGW-~1/I686-8~1.0-P/mingw32/lib/gcc/i686-w64-mingw32/8.1.0/include/c++/i686-w64-mingw32/bits/os_defines.h \

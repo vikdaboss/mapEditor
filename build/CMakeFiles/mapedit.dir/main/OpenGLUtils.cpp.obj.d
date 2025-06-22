@@ -1,6 +1,6 @@
 CMakeFiles/mapedit.dir/main/OpenGLUtils.cpp.obj: \
- C:\Users\vicro\Desktop\Mech\mapedit\main\OpenGLUtils.cpp \
- C:/Users/vicro/Desktop/Mech/mapedit/main/OpenGLUtils.h \
+ C:\Users\vicro\Desktop\Mech\mapedit\repo\mapEditor\main\OpenGLUtils.cpp \
+ C:/Users/vicro/Desktop/Mech/mapedit/repo/mapEditor/main/OpenGLUtils.h \
  C:/PROGRA~2/MINGW-~1/I686-8~1.0-P/mingw32/lib/gcc/i686-w64-mingw32/8.1.0/include/c++/string \
  C:/PROGRA~2/MINGW-~1/I686-8~1.0-P/mingw32/lib/gcc/i686-w64-mingw32/8.1.0/include/c++/i686-w64-mingw32/bits/c++config.h \
  C:/PROGRA~2/MINGW-~1/I686-8~1.0-P/mingw32/lib/gcc/i686-w64-mingw32/8.1.0/include/c++/i686-w64-mingw32/bits/os_defines.h \
@@ -107,9 +107,9 @@ CMakeFiles/mapedit.dir/main/OpenGLUtils.cpp.obj: \
  C:/PROGRA~2/MINGW-~1/I686-8~1.0-P/mingw32/lib/gcc/i686-w64-mingw32/8.1.0/include/c++/cstdio \
  C:/PROGRA~2/MINGW-~1/I686-8~1.0-P/mingw32/lib/gcc/i686-w64-mingw32/8.1.0/include/c++/cerrno \
  C:/PROGRA~2/MINGW-~1/I686-8~1.0-P/mingw32/lib/gcc/i686-w64-mingw32/8.1.0/include/c++/bits/basic_string.tcc \
- C:/Users/vicro/Desktop/Mech/mapedit/libraries/include/glad/glad.h \
- C:/Users/vicro/Desktop/Mech/mapedit/libraries/include/KHR/khrplatform.h \
- C:/Users/vicro/Desktop/Mech/mapedit/libraries/include/GLFW/glfw3.h \
+ C:/Users/vicro/Desktop/Mech/mapedit/repo/mapEditor/libraries/include/glad/glad.h \
+ C:/Users/vicro/Desktop/Mech/mapedit/repo/mapEditor/libraries/include/KHR/khrplatform.h \
+ C:/Users/vicro/Desktop/Mech/mapedit/repo/mapEditor/libraries/include/GLFW/glfw3.h \
  C:/PROGRA~2/MINGW-~1/I686-8~1.0-P/mingw32/lib/gcc/i686-w64-mingw32/8.1.0/include/c++/fstream \
  C:/PROGRA~2/MINGW-~1/I686-8~1.0-P/mingw32/lib/gcc/i686-w64-mingw32/8.1.0/include/c++/istream \
  C:/PROGRA~2/MINGW-~1/I686-8~1.0-P/mingw32/lib/gcc/i686-w64-mingw32/8.1.0/include/c++/ios \
@@ -139,4 +139,5 @@ CMakeFiles/mapedit.dir/main/OpenGLUtils.cpp.obj: \
  C:/PROGRA~2/MINGW-~1/I686-8~1.0-P/mingw32/lib/gcc/i686-w64-mingw32/8.1.0/include/c++/bits/fstream.tcc \
  C:/PROGRA~2/MINGW-~1/I686-8~1.0-P/mingw32/lib/gcc/i686-w64-mingw32/8.1.0/include/c++/sstream \
  C:/PROGRA~2/MINGW-~1/I686-8~1.0-P/mingw32/lib/gcc/i686-w64-mingw32/8.1.0/include/c++/bits/sstream.tcc \
- C:/PROGRA~2/MINGW-~1/I686-8~1.0-P/mingw32/lib/gcc/i686-w64-mingw32/8.1.0/include/c++/iostream
+ C:/PROGRA~2/MINGW-~1/I686-8~1.0-P/mingw32/lib/gcc/i686-w64-mingw32/8.1.0/include/c++/iostream \
+ C:/Users/vicro/Desktop/Mech/mapedit/repo/mapEditor/main/myMath.h

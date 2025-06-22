@@ -1,7 +1,7 @@
 CMakeFiles/mapedit.dir/main/callbacks.cpp.obj: \
- C:\Users\vicro\Desktop\Mech\mapedit\main\callbacks.cpp \
- C:/Users/vicro/Desktop/Mech/mapedit/main/callbacks.h \
- C:/Users/vicro/Desktop/Mech/mapedit/libraries/include/GLFW/glfw3.h \
+ C:\Users\vicro\Desktop\Mech\mapedit\repo\mapEditor\main\callbacks.cpp \
+ C:/Users/vicro/Desktop/Mech/mapedit/repo/mapEditor/main/callbacks.h \
+ C:/Users/vicro/Desktop/Mech/mapedit/repo/mapEditor/libraries/include/GLFW/glfw3.h \
  C:/PROGRA~2/MINGW-~1/I686-8~1.0-P/mingw32/lib/gcc/i686-w64-mingw32/8.1.0/include/stddef.h \
  C:/PROGRA~2/MINGW-~1/I686-8~1.0-P/mingw32/i686-w64-mingw32/include/stddef.h \
  C:/PROGRA~2/MINGW-~1/I686-8~1.0-P/mingw32/i686-w64-mingw32/include/crtdefs.h \
@@ -132,4 +132,4 @@ CMakeFiles/mapedit.dir/main/callbacks.cpp.obj: \
  C:/PROGRA~2/MINGW-~1/I686-8~1.0-P/mingw32/lib/gcc/i686-w64-mingw32/8.1.0/include/c++/bits/ostream.tcc \
  C:/PROGRA~2/MINGW-~1/I686-8~1.0-P/mingw32/lib/gcc/i686-w64-mingw32/8.1.0/include/c++/istream \
  C:/PROGRA~2/MINGW-~1/I686-8~1.0-P/mingw32/lib/gcc/i686-w64-mingw32/8.1.0/include/c++/bits/istream.tcc \
- C:/Users/vicro/Desktop/Mech/mapedit/main/mapEditor.h
+ C:/Users/vicro/Desktop/Mech/mapedit/repo/mapEditor/main/mapEditor.h

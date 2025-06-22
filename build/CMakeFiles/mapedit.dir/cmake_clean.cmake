@@ -7,6 +7,8 @@ file(REMOVE_RECURSE
   "CMakeFiles/mapedit.dir/main/main.cpp.obj.d"
   "CMakeFiles/mapedit.dir/main/mapEditor.cpp.obj"
   "CMakeFiles/mapedit.dir/main/mapEditor.cpp.obj.d"
+  "CMakeFiles/mapedit.dir/main/myMath.cpp.obj"
+  "CMakeFiles/mapedit.dir/main/myMath.cpp.obj.d"
   "CMakeFiles/mapedit.dir/main/windowManager.cpp.obj"
   "CMakeFiles/mapedit.dir/main/windowManager.cpp.obj.d"
   "libmapedit.dll.a"
