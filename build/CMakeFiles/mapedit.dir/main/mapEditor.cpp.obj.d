@@ -13,4 +13,5 @@ CMakeFiles/mapedit.dir/main/mapEditor.cpp.obj: \
  C:/PROGRA~2/MINGW-~1/I686-8~1.0-P/mingw32/i686-w64-mingw32/include/sdks/_mingw_ddk.h \
  C:/PROGRA~2/MINGW-~1/I686-8~1.0-P/mingw32/lib/gcc/i686-w64-mingw32/8.1.0/include/stdint.h \
  C:/PROGRA~2/MINGW-~1/I686-8~1.0-P/mingw32/i686-w64-mingw32/include/stdint.h \
- C:/PROGRA~2/MINGW-~1/I686-8~1.0-P/mingw32/i686-w64-mingw32/include/GL/gl.h
+ C:/PROGRA~2/MINGW-~1/I686-8~1.0-P/mingw32/i686-w64-mingw32/include/GL/gl.h \
+ C:/Users/vicro/Desktop/Mech/mapedit/repo/mapEditor/main/myMath.h

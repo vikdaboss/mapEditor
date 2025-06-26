@@ -24,6 +24,22 @@ int main()
     //glfwSwapInterval(0); // Disables V-Sync
     WindowManager::setupCallbacks(window);
 
+    //view transform matrix
+    float view[16] = {
+        1, 0, 0, 0,
+        0, 1, 0, 0,
+        0, 0, 1, 0,
+        0, 0, 0, 1
+    };
+    float proj[16];
+    ortho(-12.5f, 12.5f, -12.5f, 12.5f, -0.5f, 0.5f, proj);
+
+    float mvp[16];
+    multMatrix(proj,view,mvp);
+
+    float invMvp[16];
+    invertMatrix(mvp,invMvp);
+
     float   grid_points[] = {
         -1.0f,  1.0f, 0.0f,  // Top-left
          1.0f,  1.0f, 0.0f,  // Top-right
@@ -33,22 +49,21 @@ int main()
          1.0f,  1.0f, 0.0f,  // Top-right
          1.0f, -1.0f, 0.0f   // Bottom-right
     };
-    float pointA[] = {0.5,0.5};
-    float pointB[] = {-0.5,-0.5};
-    float pointC[] = {-0.5,0.5};
-    float pointD[] = {0.5,-0.5};
+    float pointA[] = {5,5};
+    float pointB[] = {-5,-5};
+    float pointC[] = {-5,5};
+    float pointD[] = {5,-5};
     
     float testLine1[18];
-    DrawLine(pointA,pointB,0.05,1,testLine1);
+    DrawLine(pointA,pointB,0.1,1,testLine1);
 
     float testLine2[18];
-    DrawLine(pointC,pointD,0.05,2,testLine2);
+    DrawLine(pointC,pointD,0.1,2,testLine2);
 
     float points[54];
     memcpy(points,grid_points, sizeof(grid_points));
     memcpy(points+18, testLine1, sizeof(testLine1));
     memcpy(points+36, testLine2, sizeof(testLine2));
-    float center_offset[] = {0.0,0.0};
 
     //create vertex buffer object
     GLuint vbo = 0;
@@ -72,48 +87,57 @@ int main()
     glEnable(GL_BLEND);
     glBlendFunc(GL_SRC_ALPHA, GL_ONE_MINUS_SRC_ALPHA);
 
-    //load shader program
-    GLuint shaderProgramGrid = LoadShader("shaders/vertex.glsl","shaders/grid_frag.glsl");
+    //load shader programs
+    GLuint shaderProgramGrid = LoadShader("shaders/gui_vertex.glsl","shaders/grid_frag.glsl");
+    GLuint shaderProgramLine = LoadShader("shaders/vertex.glsl","shaders/line_frag.glsl");
 
     //get uniform location to pass to the shader in program loop
-    glUseProgram(shaderProgramGrid);
     GLint shader_windowSize = glGetUniformLocation(shaderProgramGrid, "windowSize");
     GLint shader_centerOffset = glGetUniformLocation(shaderProgramGrid, "centerOffset");
     GLint shader_zoom = glGetUniformLocation(shaderProgramGrid, "zoomLevel");
 
-    GLuint shaderProgramLine = LoadShader("shaders/vertex.glsl","shaders/line_frag.glsl");
+    GLint shader_MVP = glGetUniformLocation(shaderProgramLine, "u_MVP");
 
-    //dumb profiling
+    //basic profiling
     std::chrono::_V2::system_clock::time_point frame_start;
     std::chrono::_V2::system_clock::time_point frame_end;
     std::chrono::duration<double> frame_time;
     
     int lastMouseX = 0;
     int lastMouseY = 0;
-
+    float mouseWorld[4];
 
     //mainLoop
     while ( !glfwWindowShouldClose( window ) )
     {
         
+        
         frame_start = std::chrono::high_resolution_clock::now();
         glfwPollEvents();
 
-        //Input stuff
+/////////////////////////////////////////INPUT AND VIEW MATRICES///////////////////////////////////////////////
+        
+        int zoom = mapEditor.get_zoom();
+        float aspect = (float)InputState::window_width / (float)InputState::window_height;
+        float scale = 12.5f / zoom;
+    
+        Vector2 deltaWorld;
+        deltaWorld.x =  InputState::mouse_delta[0] / InputState::window_width  * 2.0f * scale;
+        deltaWorld.y = -InputState::mouse_delta[1] / InputState::window_height * 2.0f * scale;
+        
         if(InputState::mouseX == lastMouseX && InputState::mouseY == lastMouseY)
-        {
+        { // if the mouse hasn't moved, reset delta
+            
             InputState::mouse_delta[0] = 0.0;
             InputState::mouse_delta[1] = 0.0;
             InputState::mouse_delta_normalized[0] = 0.0;
             InputState::mouse_delta_normalized[1] = 0.0;
         }
-        lastMouseX = InputState::mouseX;
-        lastMouseY = InputState::mouseY;
         
         if(InputState::mouse_action == 1 && InputState::mouse_button == 2)
-        {
-            center_offset[0] += InputState::mouse_delta[0];
-            center_offset[1] += InputState::mouse_delta[1];
+        { //moving canvas with middle mouse held
+            mapEditor.offset.x += deltaWorld.x;
+            mapEditor.offset.y += deltaWorld.y;
         }
 
         if(InputState::scrollY > 0){
@@ -125,20 +149,42 @@ int main()
         InputState::scrollX = 0;
         InputState::scrollY = 0;
 
+        lastMouseX = InputState::mouseX;
+        lastMouseY = InputState::mouseY;
+        
+        // To prevent distortion:
+        if (aspect >= 1.0f) {
+            // Wide window — expand X range
+            ortho(-scale * aspect, scale * aspect, -scale, scale, -1.0f, 1.0f, proj);
+        } else {
+            // Tall window — expand Y range
+            ortho(-scale, scale, -scale / aspect, scale / aspect, -1.0f, 1.0f, proj);
+        }
+
+        translate(mapEditor.offset/scale,view); //updates view matrix
+        multMatrix(proj,view,mvp); // updates mvp
+        invertMatrix(mvp,invMvp); // updates inverse of mvp
+
+        float ndcVec[4] = {(float)InputState::mouseX_normalized,(float)InputState::mouseY_normalized,0.0f,1.0f};
+        multMatrixVec4(invMvp, ndcVec, mouseWorld);
+        InputState::mousePosX = mouseWorld[0];
+        InputState::mousePosY = mouseWorld[1];
+
+/////////////////////////////////////////////DRAWING GEOMETRY///////////////////////////////////////////////////////
         glClear( GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT );
 
+        //drawing background grid
         glUseProgram( shaderProgramGrid );
-
-        //setting shader values
         glUniform2f(shader_windowSize,InputState::window_width,InputState::window_height);
-        glUniform1i(shader_zoom,mapEditor.get_zoom());
-        glUniform2f(shader_centerOffset,center_offset[0],-center_offset[1]);
+        glUniform1i(shader_zoom,zoom);
+        glUniform2f(shader_centerOffset,mapEditor.offset.x/scale ,mapEditor.offset.y/scale);
 
-        //drawing triangles
         glBindVertexArray( vao );
         glDrawArrays( GL_TRIANGLES, 0, 6 );
 
+        //drawing lines
         glUseProgram(shaderProgramLine);
+        glUniformMatrix4fv(shader_MVP,1,GL_FALSE,mvp);
         glDrawArrays( GL_TRIANGLES, 6, 12);
     
         //end of frame

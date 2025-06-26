@@ -136,6 +136,7 @@ CMakeFiles/mapedit.dir/main/main.cpp.obj: \
  C:/Users/vicro/Desktop/Mech/mapedit/repo/mapEditor/main/callbacks.h \
  C:/Users/vicro/Desktop/Mech/mapedit/repo/mapEditor/main/OpenGLUtils.h \
  C:/Users/vicro/Desktop/Mech/mapedit/repo/mapEditor/main/mapEditor.h \
+ C:/Users/vicro/Desktop/Mech/mapedit/repo/mapEditor/main/myMath.h \
  C:/PROGRA~2/MINGW-~1/I686-8~1.0-P/mingw32/lib/gcc/i686-w64-mingw32/8.1.0/include/c++/chrono \
  C:/PROGRA~2/MINGW-~1/I686-8~1.0-P/mingw32/lib/gcc/i686-w64-mingw32/8.1.0/include/c++/ratio \
  C:/PROGRA~2/MINGW-~1/I686-8~1.0-P/mingw32/lib/gcc/i686-w64-mingw32/8.1.0/include/c++/ctime \

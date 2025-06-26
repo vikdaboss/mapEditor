@@ -30,6 +30,13 @@
             "problemMatcher": []
         },
         {
+            "label": "Reload shaders",
+            "type": "shell",
+            "command": "powershell -Command \"Remove-Item -Recurse -Force '${workspaceFolder}\\build\\shaders'; Copy-Item -Recurse '${workspaceFolder}\\shaders' '${workspaceFolder}\\build\\shaders'\"",
+            "problemMatcher": [],
+            "group": "build"
+        },
+        {
             "label": "CMake Full Build (MinGW)",
             "dependsOn": [
                 "CMake Configure (MinGW)",

@@ -5,6 +5,8 @@ namespace InputState{
     extern double mouseY;
     extern double mouseX_normalized;
     extern double mouseY_normalized;
+    extern double mousePosX;
+    extern double mousePosY;
     extern double mouse_delta[2];
     extern double mouse_delta_normalized[2];
 
