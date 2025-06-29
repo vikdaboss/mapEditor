@@ -1,10 +1,10 @@
-#include<iostream>
 #include<glad/glad.h>
+#include"windowManager.h"
+#include"callbacks.h"
+#include"OpenGLUtils.h"
+#include"mapEditor.h"
+#include<iostream>
 #include<GLFW/glfw3.h>
-#include<windowManager.h>
-#include<callbacks.h>
-#include<OpenGLUtils.h>
-#include<mapEditor.h>
 #include<chrono>
 
 void framebuffer_size_callback(GLFWwindow* window, int width, int height)
@@ -88,15 +88,19 @@ int main()
     glBlendFunc(GL_SRC_ALPHA, GL_ONE_MINUS_SRC_ALPHA);
 
     //load shader programs
-    GLuint shaderProgramGrid = LoadShader("shaders/gui_vertex.glsl","shaders/grid_frag.glsl");
-    GLuint shaderProgramLine = LoadShader("shaders/vertex.glsl","shaders/line_frag.glsl");
+    Shader* shaderProgramGrid = LoadShader("shaders/gui_vertex.glsl","shaders/grid_frag.glsl");
+    Shader* shaderProgramLine = LoadShader("shaders/vertex.glsl","shaders/line_frag.glsl");
 
     //get uniform location to pass to the shader in program loop
-    GLint shader_windowSize = glGetUniformLocation(shaderProgramGrid, "windowSize");
-    GLint shader_centerOffset = glGetUniformLocation(shaderProgramGrid, "centerOffset");
-    GLint shader_zoom = glGetUniformLocation(shaderProgramGrid, "zoomLevel");
+    GLint shader_windowSize = glGetUniformLocation(shaderProgramGrid->shaderProgramID, "windowSize");
+    loadedShaders[0].uniforms["windowSize"] = &shader_windowSize;
+    GLint shader_centerOffset = glGetUniformLocation(shaderProgramGrid->shaderProgramID, "centerOffset");
+    loadedShaders[0].uniforms["centerOffset"] = &shader_centerOffset;
+    GLint shader_zoom = glGetUniformLocation(shaderProgramGrid->shaderProgramID, "zoomLevel");
+    loadedShaders[0].uniforms["zoomLevel"] = &shader_zoom;
 
-    GLint shader_MVP = glGetUniformLocation(shaderProgramLine, "u_MVP");
+    GLint shader_MVP = glGetUniformLocation(shaderProgramLine->shaderProgramID, "u_MVP");
+    loadedShaders[1].uniforms["u_MVP"] = &shader_MVP;
 
     //basic profiling
     std::chrono::_V2::system_clock::time_point frame_start;
@@ -174,7 +178,7 @@ int main()
         glClear( GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT );
 
         //drawing background grid
-        glUseProgram( shaderProgramGrid );
+        glUseProgram( shaderProgramGrid->shaderProgramID );
         glUniform2f(shader_windowSize,InputState::window_width,InputState::window_height);
         glUniform1i(shader_zoom,zoom);
         glUniform2f(shader_centerOffset,mapEditor.offset.x/scale ,mapEditor.offset.y/scale);
@@ -183,7 +187,7 @@ int main()
         glDrawArrays( GL_TRIANGLES, 0, 6 );
 
         //drawing lines
-        glUseProgram(shaderProgramLine);
+        glUseProgram(shaderProgramLine->shaderProgramID);
         glUniformMatrix4fv(shader_MVP,1,GL_FALSE,mvp);
         glDrawArrays( GL_TRIANGLES, 6, 12);
     

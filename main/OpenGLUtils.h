@@ -1,12 +1,19 @@
-#include <string>
 #include <glad/glad.h>
+#include <string>
+#include <unordered_map>
 
-struct shaderProgram{
-    std::string vertex;
-    std::string fragment;
+
+
+struct Shader{
+    std::string vertexPath;
+    std::string fragmentPath;
+    GLuint shaderProgramID;
+    std::unordered_map<std::string,GLint*> uniforms;
 };
 
-shaderProgram loadedShaders[256];
-int lastLoadedShader = 0;
-GLuint LoadShader(const char* vertexPath, const char* fragmentPath);
+extern Shader loadedShaders[];
+extern int lastLoadedShader;
+
+Shader* LoadShader(const char* vertexPath, const char* fragmentPath);
+void ReloadAllShaders();
 void DrawLine(float* pointA, float* pointB, float thickness,int lineType, float* outPoints);

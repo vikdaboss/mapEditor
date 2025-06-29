@@ -1,7 +1,9 @@
-#include<callbacks.h>
+#include"callbacks.h"
+#include"mapEditor.h"
+#include"OpenGLUtils.h"
 #include<iostream>
-#include<mapEditor.h>
 #include<cmath>
+
 
 namespace InputState{
     double mouseX = 0.0;
@@ -44,7 +46,10 @@ void cursor_position_callback(GLFWwindow* window, double xpos, double ypos)
 
 void key_callback(GLFWwindow* window, int key, int scancode, int action, int mods)
 {
-
+    if (key == GLFW_KEY_R && action == GLFW_PRESS) {
+        // reloading shaders
+        ReloadAllShaders();
+    }
 }
 
 void scroll_callback(GLFWwindow* window, double xoffset, double yoffset)

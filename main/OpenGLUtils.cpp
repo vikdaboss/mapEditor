@@ -1,9 +1,13 @@
-#include <OpenGLUtils.h>
+#include "OpenGLUtils.h"
+#include "myMath.h"
 #include <GLFW/glfw3.h>
 #include <fstream>
 #include <sstream>
 #include <iostream>
-#include <myMath.h>
+#include <unordered_map>
+
+Shader loadedShaders[256];
+int lastLoadedShader = 0;
 
 static std::string readFile(const char* filePath) {
     
@@ -13,12 +17,24 @@ static std::string readFile(const char* filePath) {
     return buffer.str();
 }
 
-GLuint LoadShader(const char* vertexPath, const char* fragmentPath) {
+Shader* LoadShader(const char* vertexPath, const char* fragmentPath) {
 
-    loadedShaders[lastLoadedShader].vertex = vertexPath;
-    lastLoadedShader +=1 ;
-    loadedShaders[lastLoadedShader].fragment = fragmentPath;
-    lastLoadedShader +=1 ;
+    int shaderIndex = -1;
+    //check if shader isn't alread loaded
+    for(int i=0; i< lastLoadedShader; i++){
+        if(loadedShaders[i].vertexPath == vertexPath && loadedShaders[i].fragmentPath == fragmentPath)
+        {
+                shaderIndex = i;
+                break;
+        }
+    }
+    if(shaderIndex == -1)
+    { // if shader isnt already in the list we add it to the next available space
+        shaderIndex = lastLoadedShader;
+        lastLoadedShader +=1 ; 
+    } 
+    loadedShaders[shaderIndex].vertexPath = vertexPath;
+    loadedShaders[shaderIndex].fragmentPath = fragmentPath;
 
     std::string vertexCodeStr = readFile(vertexPath);
     std::string fragmentCodeStr = readFile(fragmentPath);
@@ -48,6 +64,8 @@ GLuint LoadShader(const char* vertexPath, const char* fragmentPath) {
     glAttachShader(shaderProgram,fragmentShader);
     glLinkProgram(shaderProgram);
 
+    loadedShaders[shaderIndex].shaderProgramID = shaderProgram;
+
     glDeleteShader(vertexShader);
     glDeleteShader(fragmentShader);
 
@@ -58,10 +76,27 @@ GLuint LoadShader(const char* vertexPath, const char* fragmentPath) {
         glGetProgramInfoLog(shaderProgram, 512, NULL, infoLog);
         std::cerr << "Shader Linking Error:\n" << infoLog << std::endl;
     }
-    return shaderProgram;
+
+    return &loadedShaders[shaderIndex];
 }
 
-void ReloadAllShaders();
+void ReloadAllShaders()
+{
+    for(int i = 0;i < lastLoadedShader;i++)
+    {
+        //delete old shader program
+        if(loadedShaders[i].shaderProgramID != 0) { glDeleteProgram(loadedShaders[i].shaderProgramID); }
+        //load new shader program
+        LoadShader(loadedShaders[i].vertexPath.c_str(),loadedShaders[i].fragmentPath.c_str());
+
+        if(loadedShaders[i].uniforms.size() >0){ //update uniforms if they exist
+            for(auto it = loadedShaders[i].uniforms.begin(); it!=loadedShaders[i].uniforms.end();it++){
+                *it->second = glGetUniformLocation(loadedShaders[i].shaderProgramID, it->first.c_str());
+                std::cout << it->first.c_str() << std::endl;
+            }
+        }
+    }
+}
 //TODO : "add to total vertex array" function that can be called to add / draw new lines in callbacks,
 // and that returns a pointer to the line in the combined array for deletion
 
