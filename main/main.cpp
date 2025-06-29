@@ -91,7 +91,7 @@ int main()
     Shader* shaderProgramGrid = LoadShader("shaders/gui_vertex.glsl","shaders/grid_frag.glsl");
     Shader* shaderProgramLine = LoadShader("shaders/vertex.glsl","shaders/line_frag.glsl");
 
-    //get uniform location to pass to the shader in program loop
+    //get uniform locations to pass to the shader in program loop
     GLint shader_windowSize = glGetUniformLocation(shaderProgramGrid->shaderProgramID, "windowSize");
     loadedShaders[0].uniforms["windowSize"] = &shader_windowSize;
     GLint shader_centerOffset = glGetUniformLocation(shaderProgramGrid->shaderProgramID, "centerOffset");
@@ -109,13 +109,11 @@ int main()
     
     int lastMouseX = 0;
     int lastMouseY = 0;
-    float mouseWorld[4];
+    float mouseWorld[4]; // vec4 containing the world coords of the mouse cursor
 
     //mainLoop
     while ( !glfwWindowShouldClose( window ) )
     {
-        
-        
         frame_start = std::chrono::high_resolution_clock::now();
         glfwPollEvents();
 
@@ -170,7 +168,7 @@ int main()
         invertMatrix(mvp,invMvp); // updates inverse of mvp
 
         float ndcVec[4] = {(float)InputState::mouseX_normalized,(float)InputState::mouseY_normalized,0.0f,1.0f};
-        multMatrixVec4(invMvp, ndcVec, mouseWorld);
+        multMatrixVec4(invMvp, ndcVec, mouseWorld); //transform our NDC mouse coords to world coords
         InputState::mousePosX = mouseWorld[0];
         InputState::mousePosY = mouseWorld[1];
 
@@ -184,12 +182,12 @@ int main()
         glUniform2f(shader_centerOffset,mapEditor.offset.x/scale ,mapEditor.offset.y/scale);
 
         glBindVertexArray( vao );
-        glDrawArrays( GL_TRIANGLES, 0, 6 );
+        glDrawArrays( GL_TRIANGLES, 0, 6 ); //this is the background quad it'll never really change
 
         //drawing lines
         glUseProgram(shaderProgramLine->shaderProgramID);
         glUniformMatrix4fv(shader_MVP,1,GL_FALSE,mvp);
-        glDrawArrays( GL_TRIANGLES, 6, 12);
+        glDrawArrays( GL_TRIANGLES, 6, 12); //this will be bound by the amount of lines we're drawing * 6 (2 tris per line)
     
         //end of frame
         glfwSwapBuffers( window );

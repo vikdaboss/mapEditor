@@ -24,8 +24,8 @@ Shader* LoadShader(const char* vertexPath, const char* fragmentPath) {
     for(int i=0; i< lastLoadedShader; i++){
         if(loadedShaders[i].vertexPath == vertexPath && loadedShaders[i].fragmentPath == fragmentPath)
         {
-                shaderIndex = i;
-                break;
+            shaderIndex = i;
+            break;
         }
     }
     if(shaderIndex == -1)
@@ -64,12 +64,13 @@ Shader* LoadShader(const char* vertexPath, const char* fragmentPath) {
     glAttachShader(shaderProgram,fragmentShader);
     glLinkProgram(shaderProgram);
 
-    loadedShaders[shaderIndex].shaderProgramID = shaderProgram;
+    loadedShaders[shaderIndex].shaderProgramID = shaderProgram; //store the created shader program ID
 
-    glDeleteShader(vertexShader);
+    //delete vertex and frag shader now that program has both
+    glDeleteShader(vertexShader); 
     glDeleteShader(fragmentShader);
 
-    GLint success;
+    GLint success; //if failed print some shit
     glGetProgramiv(shaderProgram, GL_LINK_STATUS, &success);
     if (!success) {
         char infoLog[512];
@@ -80,7 +81,7 @@ Shader* LoadShader(const char* vertexPath, const char* fragmentPath) {
     return &loadedShaders[shaderIndex];
 }
 
-void ReloadAllShaders()
+void ReloadAllShaders() 
 {
     for(int i = 0;i < lastLoadedShader;i++)
     {

@@ -75,7 +75,7 @@ Vector2 Vector2::normalized() const{
     return Vector2(x/mag,y/mag);
 };
 
-//orthogonal projection matrix
+//orthographic projection matrix
 void ortho(float left, float right, float bottom, float top, float near, float far, float* out) {
 //https://learnwebgl.brown37.net/08_projections/projections_ortho.html
 
@@ -247,14 +247,14 @@ void invertMatrix(const float* m, float* out)
             out[i] = inv[i] * det;
     }    
 }
-
+//matrix4 * vec4
 void multMatrixVec4(float* mat, float* vec, float* out){
     out[0]= vec[0]* mat[0]+ vec[1]* mat[1]+ vec[2]* mat[2]+ vec[3]*mat[3];
     out[1]= vec[0]* mat[4]+ vec[1]* mat[5]+ vec[2]* mat[6]+ vec[3]*mat[7];
     out[2]= vec[0]* mat[8]+ vec[1]* mat[9]+ vec[2]* mat[10]+ vec[3]*mat[11];
     out[3]= vec[0]* mat[12]+ vec[1]* mat[13]+ vec[2]* mat[14]+ vec[3]*mat[15];
 } 
-
+//vec4 * matrix4
 void multVec4Matrix(float* vec, float* mat, float* out){
     out[0]= vec[0]* mat[0]+ vec[1]* mat[4]+ vec[2]* mat[8]+ vec[3]*mat[12];
     out[1]= vec[0]* mat[1]+ vec[1]* mat[5]+ vec[2]* mat[9]+ vec[3]*mat[13];
