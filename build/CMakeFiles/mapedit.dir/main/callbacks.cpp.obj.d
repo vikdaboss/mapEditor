@@ -16,7 +16,7 @@ CMakeFiles/mapedit.dir/main/callbacks.cpp.obj: \
  C:/PROGRA~2/MINGW-~1/I686-8~1.0-P/mingw32/i686-w64-mingw32/include/stddef.h \
  C:/Users/vicro/Desktop/Mech/mapedit/repo/mapEditor/libraries/include/GLFW/glfw3.h \
  C:\Users\vicro\Desktop\Mech\mapedit\repo\mapEditor\main\mapEditor.h \
- C:/Users/vicro/Desktop/Mech/mapedit/repo/mapEditor/main/myMath.h \
+ C:\Users\vicro\Desktop\Mech\mapedit\repo\mapEditor\main\myMath.h \
  C:\Users\vicro\Desktop\Mech\mapedit\repo\mapEditor\main\OpenGLUtils.h \
  C:/PROGRA~2/MINGW-~1/I686-8~1.0-P/mingw32/lib/gcc/i686-w64-mingw32/8.1.0/include/c++/string \
  C:/PROGRA~2/MINGW-~1/I686-8~1.0-P/mingw32/lib/gcc/i686-w64-mingw32/8.1.0/include/c++/i686-w64-mingw32/bits/c++config.h \

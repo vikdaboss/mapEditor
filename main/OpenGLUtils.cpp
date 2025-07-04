@@ -90,7 +90,7 @@ void ReloadAllShaders()
         //load new shader program
         LoadShader(loadedShaders[i].vertexPath.c_str(),loadedShaders[i].fragmentPath.c_str());
 
-        if(loadedShaders[i].uniforms.size() >0){ //update uniforms if they exist
+        if(loadedShaders[i].uniforms.size() >0){ //loop through and update uniforms if they exist
             for(auto it = loadedShaders[i].uniforms.begin(); it!=loadedShaders[i].uniforms.end();it++){
                 *it->second = glGetUniformLocation(loadedShaders[i].shaderProgramID, it->first.c_str());
                 std::cout << it->first.c_str() << std::endl;

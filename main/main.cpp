@@ -49,22 +49,30 @@ int main()
          1.0f,  1.0f, 0.0f,  // Top-right
          1.0f, -1.0f, 0.0f   // Bottom-right
     };
-    float pointA[] = {5,5};
-    float pointB[] = {-5,-5};
-    float pointC[] = {-5,5};
-    float pointD[] = {5,-5};
-    
-    float testLine1[18];
-    DrawLine(pointA,pointB,0.1,1,testLine1);
 
-    float testLine2[18];
-    DrawLine(pointC,pointD,0.1,2,testLine2);
+    float pA[] = {-5.0,-5.0};
+    float pB[] = {5.0,5.0};
 
-    float points[54];
+    float pC[] = {2.0,-6.0};
+    float pD[] = {15.0,10.0};
+
+
+    float pE[] = {-8.0,4.0};
+    float pF[] = {7.0,-3.0};
+
+
+    float pG[] = {0.0,-2.0};
+    float pH[] = {-4.0,6.0};
+
+    mapEditor.addLine(pA,pB,1,0.1f);
+    mapEditor.addLine(pC,pD,1,0.1f);
+    mapEditor.addLine(pE,pF,1,0.1f);
+    mapEditor.addLine(pG,pH,1,0.1f);
+
+    float points[18 + mapEditor.get_numLines()*18];
     memcpy(points,grid_points, sizeof(grid_points));
-    memcpy(points+18, testLine1, sizeof(testLine1));
-    memcpy(points+36, testLine2, sizeof(testLine2));
-
+    mapEditor.drawLines(points,18);
+    
     //create vertex buffer object
     GLuint vbo = 0;
     glGenBuffers( 1, &vbo );
@@ -109,6 +117,7 @@ int main()
     
     int lastMouseX = 0;
     int lastMouseY = 0;
+    int lastMouseAction = 0;
     float mouseWorld[4]; // vec4 containing the world coords of the mouse cursor
 
     //mainLoop
@@ -142,6 +151,10 @@ int main()
             mapEditor.offset.y += deltaWorld.y;
         }
 
+        if(InputState::mouse_action == 0 && lastMouseAction==1 && InputState::mouse_button == 0){
+            std::cout<<"mouse 0 released"<<std::endl;
+        }
+
         if(InputState::scrollY > 0){
             mapEditor.zoomIn();
         }
@@ -153,7 +166,8 @@ int main()
 
         lastMouseX = InputState::mouseX;
         lastMouseY = InputState::mouseY;
-        
+        lastMouseAction = InputState::mouse_action;
+
         // To prevent distortion:
         if (aspect >= 1.0f) {
             // Wide window — expand X range
@@ -187,7 +201,7 @@ int main()
         //drawing lines
         glUseProgram(shaderProgramLine->shaderProgramID);
         glUniformMatrix4fv(shader_MVP,1,GL_FALSE,mvp);
-        glDrawArrays( GL_TRIANGLES, 6, 12); //this will be bound by the amount of lines we're drawing * 6 (2 tris per line)
+        glDrawArrays( GL_TRIANGLES, 6, mapEditor.get_numLines()*6); //this will be bound by the amount of lines we're drawing * 6 (2 tris per line)
     
         //end of frame
         glfwSwapBuffers( window );
