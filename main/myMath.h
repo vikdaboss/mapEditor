@@ -36,3 +36,4 @@ void multMatrix(const float* a, const float* b, float* out);
 void invertMatrix(const float* m, float* out);
 void multMatrixVec4(float* mat, float* vec, float* out);
 void multVec4Matrix(float* vec, float* mat, float* out);
+float roundToNearest(float num, float nearest);

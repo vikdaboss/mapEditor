@@ -1,6 +1,7 @@
 #version 460 core
 
 in float vAttrib;
+in vec2 worldPos;
 out vec4 frag_color;
 
 void main()

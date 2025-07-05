@@ -5,7 +5,8 @@ layout (location = 1) in float aAttrib;    // your custom attribute
 
 
 out float vAttrib;  // Pass to fragment shader
-
+out vec2 worldPos; // Pass to fragment shader
 void main() {
     gl_Position = vec4(aPos, 0.0, 1.0);
+    worldPos = aPos;
 }

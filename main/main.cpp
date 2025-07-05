@@ -6,6 +6,7 @@
 #include<iostream>
 #include<GLFW/glfw3.h>
 #include<chrono>
+#include<vector>
 
 void framebuffer_size_callback(GLFWwindow* window, int width, int height)
 {
@@ -50,34 +51,14 @@ int main()
          1.0f, -1.0f, 0.0f   // Bottom-right
     };
 
-    float pA[] = {-5.0,-5.0};
-    float pB[] = {5.0,5.0};
-
-    float pC[] = {2.0,-6.0};
-    float pD[] = {15.0,10.0};
-
-
-    float pE[] = {-8.0,4.0};
-    float pF[] = {7.0,-3.0};
-
-
-    float pG[] = {0.0,-2.0};
-    float pH[] = {-4.0,6.0};
-
-    mapEditor.addLine(pA,pB,1,0.1f);
-    mapEditor.addLine(pC,pD,1,0.1f);
-    mapEditor.addLine(pE,pF,1,0.1f);
-    mapEditor.addLine(pG,pH,1,0.1f);
-
-    float points[18 + mapEditor.get_numLines()*18];
-    memcpy(points,grid_points, sizeof(grid_points));
-    mapEditor.drawLines(points,18);
+    std::vector<float> points;
+    points.insert(points.end(),grid_points,grid_points+sizeof(grid_points));
     
     //create vertex buffer object
     GLuint vbo = 0;
     glGenBuffers( 1, &vbo );
     glBindBuffer( GL_ARRAY_BUFFER, vbo );
-    glBufferData( GL_ARRAY_BUFFER, sizeof(points), points, GL_STATIC_DRAW );
+    glBufferData( GL_ARRAY_BUFFER, points.size() * sizeof(float), points.data(), GL_DYNAMIC_DRAW );
 
     //create vertex array object
     GLuint vao = 0;
@@ -127,47 +108,12 @@ int main()
         glfwPollEvents();
 
 /////////////////////////////////////////INPUT AND VIEW MATRICES///////////////////////////////////////////////
-        
+        mapEditor.handleMouseInputs();
+
         int zoom = mapEditor.get_zoom();
         float aspect = (float)InputState::window_width / (float)InputState::window_height;
-        float scale = 12.5f / zoom;
+        float scale = 10.0f / zoom;
     
-        Vector2 deltaWorld;
-        deltaWorld.x =  InputState::mouse_delta[0] / InputState::window_width  * 2.0f * scale;
-        deltaWorld.y = -InputState::mouse_delta[1] / InputState::window_height * 2.0f * scale;
-        
-        if(InputState::mouseX == lastMouseX && InputState::mouseY == lastMouseY)
-        { // if the mouse hasn't moved, reset delta
-            
-            InputState::mouse_delta[0] = 0.0;
-            InputState::mouse_delta[1] = 0.0;
-            InputState::mouse_delta_normalized[0] = 0.0;
-            InputState::mouse_delta_normalized[1] = 0.0;
-        }
-        
-        if(InputState::mouse_action == 1 && InputState::mouse_button == 2)
-        { //moving canvas with middle mouse held
-            mapEditor.offset.x += deltaWorld.x;
-            mapEditor.offset.y += deltaWorld.y;
-        }
-
-        if(InputState::mouse_action == 0 && lastMouseAction==1 && InputState::mouse_button == 0){
-            std::cout<<"mouse 0 released"<<std::endl;
-        }
-
-        if(InputState::scrollY > 0){
-            mapEditor.zoomIn();
-        }
-        if(InputState::scrollY < 0){
-            mapEditor.zoomOut();
-        }
-        InputState::scrollX = 0;
-        InputState::scrollY = 0;
-
-        lastMouseX = InputState::mouseX;
-        lastMouseY = InputState::mouseY;
-        lastMouseAction = InputState::mouse_action;
-
         // To prevent distortion:
         if (aspect >= 1.0f) {
             // Wide window — expand X range
@@ -183,12 +129,17 @@ int main()
 
         float ndcVec[4] = {(float)InputState::mouseX_normalized,(float)InputState::mouseY_normalized,0.0f,1.0f};
         multMatrixVec4(invMvp, ndcVec, mouseWorld); //transform our NDC mouse coords to world coords
+        mouseWorld[0] = mouseWorld[0] - mapEditor.offset.x * aspect;
+        mouseWorld[1] = mouseWorld[1] - mapEditor.offset.y;
         InputState::mousePosX = mouseWorld[0];
         InputState::mousePosY = mouseWorld[1];
 
 /////////////////////////////////////////////DRAWING GEOMETRY///////////////////////////////////////////////////////
         glClear( GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT );
 
+        mapEditor.drawLines(points,18);
+        glBindBuffer( GL_ARRAY_BUFFER, vbo );
+        glBufferData( GL_ARRAY_BUFFER, points.size() * sizeof(float), points.data(), GL_DYNAMIC_DRAW );
         //drawing background grid
         glUseProgram( shaderProgramGrid->shaderProgramID );
         glUniform2f(shader_windowSize,InputState::window_width,InputState::window_height);

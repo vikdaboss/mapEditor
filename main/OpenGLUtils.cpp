@@ -5,6 +5,7 @@
 #include <sstream>
 #include <iostream>
 #include <unordered_map>
+#include <vector>
 
 Shader loadedShaders[256];
 int lastLoadedShader = 0;
@@ -101,29 +102,37 @@ void ReloadAllShaders()
 //TODO : "add to total vertex array" function that can be called to add / draw new lines in callbacks,
 // and that returns a pointer to the line in the combined array for deletion
 
-void DrawLine(float* pointA, float* pointB, float thickness,int lineType, float* outPoints) //draws a quad between 2 points
+void DrawLine(float* pointA, float* pointB, float thickness,int lineType, std::vector<float>& outPoints,int start) //draws a quad between 2 points
 {
-    Vector2 vec = Vector2(pointB[0] - pointA[0], pointB[1] - pointA[1]);
-    Vector2 ortho = Vector2(-vec.normalized().x,vec.normalized().y);
 
+    if (outPoints.size() < start + 18) { //resize the vector if it's not big enough
+        outPoints.resize(start + 18);
+    }
+
+    Vector2 vec = Vector2(pointB[0] - pointA[0], pointB[1] - pointA[1]);
+    Vector2 ortho = Vector2(-vec.y,vec.x);
+    ortho = ortho.normalized();
+
+    float points[18];
     // 6 vertices of our quad line
-    outPoints[0] = pointA[0] + (ortho * (thickness/2)).x;
-    outPoints[1] = pointA[1] + (ortho * (thickness/2)).y;
-    outPoints[2] = (float)lineType;
-    outPoints[3] = pointA[0] - (ortho * (thickness/2)).x;
-    outPoints[4] = pointA[1] - (ortho * (thickness/2)).y;
-    outPoints[5] = (float)lineType;
-    outPoints[6] = pointB[0] + (ortho * (thickness/2)).x;
-    outPoints[7] = pointB[1] + (ortho * (thickness/2)).y;
-    outPoints[8] = (float)lineType;
-    
-    outPoints[9] = pointB[0] + (ortho * (thickness/2)).x;
-    outPoints[10] = pointB[1] + (ortho * (thickness/2)).y;
-    outPoints[11] = (float)lineType;
-    outPoints[12] = pointB[0] - (ortho * (thickness/2)).x;
-    outPoints[13] = pointB[1] - (ortho * (thickness/2)).y;
-    outPoints[14] = (float)lineType;
-    outPoints[15] = pointA[0] - (ortho * (thickness/2)).x;
-    outPoints[16] = pointA[1] - (ortho * (thickness/2)).y;
-    outPoints[17] = (float)lineType;
+    points[0] = pointA[0] + (ortho * (thickness/2)).x;
+    points[1] = pointA[1] + (ortho * (thickness/2)).y;
+    points[2] = (float)lineType;
+    points[3] = pointA[0] - (ortho * (thickness/2)).x;
+    points[4] = pointA[1] - (ortho * (thickness/2)).y;
+    points[5] = (float)lineType;
+    points[6] = pointB[0] + (ortho * (thickness/2)).x;
+    points[7] = pointB[1] + (ortho * (thickness/2)).y;
+    points[8] = (float)lineType;
+    points[9] = pointB[0] + (ortho * (thickness/2)).x;
+    points[10] = pointB[1] + (ortho * (thickness/2)).y;
+    points[11] = (float)lineType;
+    points[12] = pointB[0] - (ortho * (thickness/2)).x;
+    points[13] = pointB[1] - (ortho * (thickness/2)).y;
+    points[14] = (float)lineType;
+    points[15] = pointA[0] - (ortho * (thickness/2)).x;
+    points[16] = pointA[1] - (ortho * (thickness/2)).y;
+    points[17] = (float)lineType;
+
+    std::copy( points, points+18 ,outPoints.begin()+start);
 }

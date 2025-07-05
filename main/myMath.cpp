@@ -261,3 +261,19 @@ void multVec4Matrix(float* vec, float* mat, float* out){
     out[2]= vec[0]* mat[2]+ vec[1]* mat[6]+ vec[2]* mat[10]+ vec[3]*mat[14];
     out[3]= vec[0]* mat[3]+ vec[1]* mat[7]+ vec[2]* mat[11]+ vec[3]*mat[15];
 } 
+
+float roundToNearest(float num, float nearest){
+
+    float remainder = fmod(num,nearest);
+
+    if(remainder<0.0f){
+        remainder += nearest;
+    }
+
+    if(remainder < 0.5f * nearest){
+        return num - remainder;
+    }
+    else{
+        return num - remainder + nearest;
+    }
+}

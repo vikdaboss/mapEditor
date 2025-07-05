@@ -2,23 +2,24 @@
 #include <GLFW/glfw3.h>
 
 namespace InputState{
-    extern double mouseX;
-    extern double mouseY;
-    extern double mouseX_normalized;
-    extern double mouseY_normalized;
-    extern double mousePosX;
-    extern double mousePosY;
-    extern double mouse_delta[2];
-    extern double mouse_delta_normalized[2];
+    extern float mouseX;
+    extern float mouseY;
+    extern float mouseX_normalized;
+    extern float mouseY_normalized;
+    extern float mousePosX;
+    extern float mousePosY;
+    extern float mouse_delta[2];
+    extern float mouse_delta_normalized[2];
 
-    extern double scrollX;
-    extern double scrollY;
+    extern float scrollX;
+    extern float scrollY;
 
     extern int window_width;
     extern int window_height;
 
     extern int mouse_button;
     extern int mouse_action;
+    extern int last_mouse_action;
 }
 
 void mouse_button_callback(GLFWwindow* window,int button, int action, int mods);
