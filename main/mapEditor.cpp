@@ -1,9 +1,9 @@
 #include <glad/glad.h>
 #include <mapEditor.h>
 #include <GLFW/glfw3.h>
-#include "OpenGLUtils.h"
 #include<iostream>
 #include <vector>
+#include "OpenGLUtils.h"
 #include "callbacks.h"
 
 MapEditor::MapEditor(GLFWwindow* window){

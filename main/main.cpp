@@ -1,12 +1,12 @@
 #include<glad/glad.h>
-#include"windowManager.h"
-#include"callbacks.h"
-#include"OpenGLUtils.h"
-#include"mapEditor.h"
 #include<iostream>
 #include<GLFW/glfw3.h>
 #include<chrono>
 #include<vector>
+#include"windowManager.h"
+#include"callbacks.h"
+#include"OpenGLUtils.h"
+#include"mapEditor.h"
 
 void framebuffer_size_callback(GLFWwindow* window, int width, int height)
 {

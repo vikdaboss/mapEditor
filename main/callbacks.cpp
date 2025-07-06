@@ -1,8 +1,9 @@
+#include<iostream>
+#include<cmath>
 #include"callbacks.h"
 #include"mapEditor.h"
 #include"OpenGLUtils.h"
-#include<iostream>
-#include<cmath>
+
 
 
 namespace InputState{

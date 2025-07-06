@@ -1,11 +1,12 @@
-#include "OpenGLUtils.h"
-#include "myMath.h"
+#include <glad/glad.h>
 #include <GLFW/glfw3.h>
 #include <fstream>
 #include <sstream>
 #include <iostream>
 #include <unordered_map>
 #include <vector>
+#include "OpenGLUtils.h"
+#include "myMath.h"
 
 Shader loadedShaders[256];
 int lastLoadedShader = 0;

@@ -1,4 +1,0 @@
-C:/Users/vicro/Desktop/Mech/mapedit/repo/mapEditor/build/CMakeFiles/glad.dir
-C:/Users/vicro/Desktop/Mech/mapedit/repo/mapEditor/build/CMakeFiles/mapedit.dir
-C:/Users/vicro/Desktop/Mech/mapedit/repo/mapEditor/build/CMakeFiles/edit_cache.dir
-C:/Users/vicro/Desktop/Mech/mapedit/repo/mapEditor/build/CMakeFiles/rebuild_cache.dir

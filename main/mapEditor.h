@@ -1,6 +1,6 @@
 #include <GLFW/glfw3.h>
-#include "myMath.h"
 #include <vector>
+#include "myMath.h"
 
 struct Line{
     Vector2 startPoint;
