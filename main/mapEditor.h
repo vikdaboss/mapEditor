@@ -47,6 +47,7 @@ private:
     int appState = VIEWING;
     int previousAppState = VIEWING;
     int lastLine = 0;
+    int editedLines[512];
     int zoomLevel;
     GLFWwindow* GLwindow;
 };

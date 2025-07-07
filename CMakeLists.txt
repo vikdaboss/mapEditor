@@ -3,6 +3,14 @@ project(MapEdit)
 
 set(CMAKE_CXX_STANDARD 17)
 
+set(CMAKE_BUILD_TYPE Debug) #debug build
+
+# debug flags for gcc:
+if(CMAKE_COMPILER_IS_GNUCXX)
+    set(CMAKE_CXX_FLAGS_DEBUG "-g -O0")
+    set(CMAKE_C_FLAGS_DEBUG "-g -O0")
+endif()
+
 # Add GLAD source
 add_library(glad STATIC main/glad.c)
 target_include_directories(glad PUBLIC libraries/include)

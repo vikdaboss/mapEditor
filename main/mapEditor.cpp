@@ -49,17 +49,20 @@ void MapEditor::editLine(int line, int startEnd, float* newPoint, int type, floa
     }
     lines[line].type = type;
     lines[line].thickness = thickness;
+    editedLines[line] = 1;
 }
 
 void MapEditor::drawLines(std::vector<float>& outPoints, int start){ // adds the array of points necessary for drawing all lines to outpoint starting at start
 
+    for(int i = 0; i < lastLine; i++){
+        if(editedLines[i] == 1){
+            float pointA[2] = {lines[i].startPoint.x,lines[i].startPoint.y};
+            float pointB[2] = {lines[i].endPoint.x,lines[i].endPoint.y};
 
-    for(int i = 0; i<lastLine; i++){
-        float pointA[2] = {lines[i].startPoint.x,lines[i].startPoint.y};
-        float pointB[2] = {lines[i].endPoint.x,lines[i].endPoint.y};
-
-        DrawLine(pointA,pointB,lines[i].thickness,lines[i].type,outPoints,start + 18*i);
+            DrawLine(pointA,pointB,lines[i].thickness,lines[i].type,outPoints,start + 18*i);
+        }
     }
+
 }
 
 void MapEditor::set_AppState(int newState){

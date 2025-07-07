@@ -7,7 +7,7 @@
             "command": "cmake",
             "args": [
                 "-S", ".",
-                "-B", "build",
+                "-B", "build/mingw",
                 "-G", "MinGW Makefiles",
                 "-DCMAKE_BUILD_TYPE=Debug"
             ],
@@ -22,7 +22,7 @@
             "command": "cmake",
             "args": [
                 "--build",
-                "build"
+                "build/mingw"
             ],
             "options": {
                 "cwd": "${workspaceFolder}"
@@ -30,9 +30,46 @@
             "problemMatcher": []
         },
         {
-            "label": "Reload shaders",
+            "label": "CMake Configure (GCC)",
             "type": "shell",
-            "command": "powershell -Command \"Remove-Item -Recurse -Force '${workspaceFolder}\\build\\shaders'; Copy-Item -Recurse '${workspaceFolder}\\shaders' '${workspaceFolder}\\build\\shaders'\"",
+            "command": "cmake",
+            "args": [
+                "-S", ".",
+                "-B", "build/gcc",
+                "-G", "MinGW Makefiles",
+                "-DCMAKE_BUILD_TYPE=Debug",
+                "-DCMAKE_C_COMPILER=gcc",
+                "-DCMAKE_CXX_COMPILER=g++"
+            ],
+            "options": {
+                "cwd": "${workspaceFolder}"
+            },
+            "problemMatcher": []
+        },
+        {
+            "label": "CMake Build (GCC)",
+            "type": "shell",
+            "command": "cmake",
+            "args": [
+                "--build",
+                "build/gcc"
+            ],
+            "options": {
+                "cwd": "${workspaceFolder}"
+            },
+            "problemMatcher": []
+        },
+        {
+            "label": "Reload shaders (MinGW)",
+            "type": "shell",
+            "command": "powershell -Command \"Remove-Item -Recurse -Force '${workspaceFolder}\\build\\mingw\\shaders'; Copy-Item -Recurse '${workspaceFolder}\\shaders' '${workspaceFolder}\\build\\mingw\\shaders'\"",
+            "problemMatcher": [],
+            "group": "build"
+        },
+        {
+            "label": "Reload shaders (GCC)",
+            "type": "shell",
+            "command": "powershell -Command \"Remove-Item -Recurse -Force '${workspaceFolder}\\build\\gcc\\shaders'; Copy-Item -Recurse '${workspaceFolder}\\shaders' '${workspaceFolder}\\build\\gcc\\shaders'\"",
             "problemMatcher": [],
             "group": "build"
         },
@@ -40,7 +77,17 @@
             "label": "CMake Full Build (MinGW)",
             "dependsOn": [
                 "CMake Configure (MinGW)",
-                "CMake Build (MinGW)"
+                "CMake Build (MinGW)",
+                "Reload shaders (MinGW)"
+            ],
+            "group": "build"
+        },
+        {
+            "label": "CMake Full Build (GCC)",
+            "dependsOn": [
+                "CMake Configure (GCC)",
+                "CMake Build (GCC)",
+                "Reload shaders (GCC)"
             ],
             "group": {
                 "kind": "build",
